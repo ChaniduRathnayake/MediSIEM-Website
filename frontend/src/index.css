@@ -1,0 +1,274 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /*
+   * Enterprise navy palette. These override Tailwind's default slate/cyan
+   * scales directly, so `bg-slate-950`, `border-slate-800`, `text-cyan-400`
+   * etc. all resolve to the brand system without per-component overrides.
+   */
+  --color-slate-50: #f8fafc; /* Primary text */
+  --color-slate-100: #e7edf4;
+  --color-slate-200: #d3dce7;
+  --color-slate-300: #b8c4d3;
+  --color-slate-400: #94a3b8; /* Secondary text */
+  --color-slate-500: #7d91a8; /* Tertiary text — ≥4.5:1 on cards (WCAG AA) */
+  --color-slate-600: #3a5570;
+  --color-slate-700: #2a4157;
+  --color-slate-800: #1e334a; /* Border */
+  --color-slate-900: #0d1b2a; /* Deep Navy — secondary background */
+  --color-slate-950: #07111f; /* Midnight Navy — primary background */
+
+  --color-cyan-200: #a6f1ff;
+  --color-cyan-300: #5ce7ff;
+  --color-cyan-400: #00d9ff; /* Cyber Cyan — primary accent */
+  --color-cyan-500: #00d9ff;
+  --color-cyan-600: #00b8d9;
+
+  --color-emerald-400: #22c55e; /* Success */
+  --color-emerald-500: #22c55e;
+  --color-amber-400: #f59e0b; /* Warning */
+  --color-amber-500: #f59e0b;
+  --color-red-400: #ef4444; /* Critical */
+  --color-red-500: #ef4444;
+
+  /* Named card surface, distinct from section backgrounds */
+  --color-card: #0f1d2d;
+  --color-card-hover: #12233a;
+
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-float-slow: float-slow 9s ease-in-out infinite;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+  --animate-dash: dash-flow 2.8s linear infinite;
+  --animate-fade-up: fade-up 0.7s var(--ease-premium) both;
+
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -6px, 0);
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.6);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(2.4);
+      opacity: 0;
+    }
+  }
+  @keyframes dash-flow {
+    to {
+      stroke-dashoffset: -40;
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 12px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+  color-scheme: dark;
+}
+
+/*
+ * Light theme: every slate-* step is mirrored (50<->950, 100<->900, ...),
+ * which preserves every existing contrast pair exactly since it's the same
+ * two colors with roles swapped. Cyan/red/amber/emerald accents are instead
+ * darkened versions of the dark-mode values (not mirrored) because they're
+ * used as accent text/icons, and the originals are too light to read on a
+ * light background.
+ */
+html.light {
+  color-scheme: light;
+
+  --color-slate-50: #07111f;
+  --color-slate-100: #0d1b2a;
+  --color-slate-200: #1e334a;
+  --color-slate-300: #2a4157;
+  --color-slate-400: #3a5570;
+  --color-slate-500: #56697f; /* ≥4.5:1 on light cards and tints */
+  --color-slate-600: #94a3b8;
+  --color-slate-700: #b8c4d3;
+  --color-slate-800: #d3dce7;
+  --color-slate-900: #e7edf4;
+  --color-slate-950: #f8fafc;
+
+  --color-card: #ffffff;
+  --color-card-hover: #f1f8fa;
+
+  --color-cyan-200: #cdeef5;
+  --color-cyan-300: #0f7189; /* ≥4.5:1 on cyan tints */
+  --color-cyan-400: #007a94;
+  --color-cyan-500: #007a94;
+  --color-cyan-600: #00626f;
+
+  --color-emerald-300: #047857;
+  --color-emerald-400: #15803d;
+  --color-emerald-500: #15803d;
+  --color-amber-300: #92400e;
+  --color-amber-400: #b45309;
+  --color-amber-500: #b45309;
+  --color-red-300: #b91c1c;
+  --color-red-400: #dc2626;
+  --color-red-500: #dc2626;
+}
+
+body {
+  @apply bg-slate-950 font-sans text-slate-50 antialiased;
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background: rgb(0 217 255 / 0.25);
+  color: var(--color-slate-50);
+}
+
+/* One consistent, highly visible keyboard focus ring site-wide. */
+:focus-visible {
+  outline: 2px solid var(--color-cyan-400);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+}
+
+@utility section {
+  @apply py-20 sm:py-28;
+}
+
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em] text-cyan-400;
+}
+
+@utility display-title {
+  @apply text-4xl font-semibold tracking-[-0.035em] text-slate-50 sm:text-5xl lg:text-[4.25rem] lg:leading-[1.02];
+}
+
+@utility section-title {
+  @apply text-3xl font-semibold tracking-[-0.03em] text-slate-50 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.08];
+}
+
+@utility lead {
+  @apply text-base leading-relaxed text-slate-400 sm:text-lg;
+}
+
+@utility card {
+  @apply rounded-2xl border border-slate-800 bg-card shadow-[0_1px_0_0_rgb(255_255_255/0.03)_inset,0_20px_40px_-24px_rgb(0_0_0/0.6)];
+}
+
+@utility card-interactive {
+  @apply card transition-[border-color,background-color,transform] duration-300 ease-(--ease-premium) hover:-translate-y-0.5 hover:border-cyan-400/35 hover:bg-card-hover;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold whitespace-nowrap transition-[background-color,border-color,color,box-shadow,transform] duration-200 ease-(--ease-premium) active:translate-y-px disabled:pointer-events-none disabled:opacity-60;
+}
+
+@utility btn-primary {
+  @apply btn bg-cyan-400 text-slate-950 shadow-[0_0_0_1px_rgb(0_217_255/0.4),0_8px_24px_-8px_rgb(0_217_255/0.45)] hover:bg-cyan-300;
+}
+
+@utility btn-secondary {
+  @apply btn border border-slate-700 bg-white/[0.02] text-slate-50 hover:border-cyan-400/50 hover:bg-cyan-400/[0.06];
+}
+
+@utility btn-ghost {
+  @apply btn px-3 text-slate-300 hover:bg-white/[0.04] hover:text-slate-50;
+}
+
+@utility link-arrow {
+  @apply inline-flex items-center gap-1.5 text-sm font-medium text-cyan-400 transition-colors hover:text-cyan-300;
+}
+
+@utility chip {
+  @apply inline-flex items-center gap-1.5 rounded-full border border-slate-800 bg-slate-900/70 px-3 py-1 text-xs font-medium text-slate-300;
+}
+
+@utility icon-tile {
+  @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/[0.07] text-cyan-400;
+}
+
+@utility field {
+  @apply mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-950/60 px-3.5 py-2.5 text-sm text-slate-50 placeholder:text-slate-500 transition-colors focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/25;
+}
+
+@utility label {
+  @apply block text-sm font-medium text-slate-300;
+}
+
+/* Subtle engineering grid used behind hero/visual areas. */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(148 163 184 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(148 163 184 / 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@utility mask-fade-b {
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, #000 40%, transparent 100%);
+}
+
+@utility glow-cyan {
+  background: radial-gradient(closest-side, rgb(0 217 255 / 0.16), transparent);
+}
+
+@utility hairline {
+  background: linear-gradient(90deg, transparent, rgb(0 217 255 / 0.5), transparent);
+}
+
+/* Unlayered so it wins over the layered btn-* utilities' padding. */
+.btn-sm {
+  padding: 0.5rem 0.875rem;
+  font-size: 13px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Thin scrollbar matching the enterprise aesthetic in either theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-slate-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-700);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-600);
+}

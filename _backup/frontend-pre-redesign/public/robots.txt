@@ -1,0 +1,6 @@
+# TODO: update the Sitemap URL below once the real production domain is
+# known (keep in sync with public/sitemap.xml and index.html's og:url).
+User-agent: *
+Allow: /
+
+Sitemap: https://medisiem.vercel.app/sitemap.xml

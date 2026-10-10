@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      Sets the light/dark class on <html> before first paint so toggling
+      (persisted in localStorage) never causes a flash of the wrong theme.
+      Keep in sync with frontend/src/hooks/useTheme.ts.
+    -->
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('theme')
+          if (stored === 'light') {
+            document.documentElement.classList.add('light')
+            document.documentElement.style.colorScheme = 'light'
+          }
+        } catch (e) {}
+      })()
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111F" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="description"
+      content="MediSIEM is Safety-as-a-Service security for hospitals that can’t afford enterprise SOC tooling. It ranks every alert by patient impact and asks a clinician before any response cuts off a life-critical device."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>MediSIEM | Safety-as-a-Service Security Operations for Hospitals</title>
+
+    <!--
+      Defaults for the home page. At build time scripts/prerender.mjs copies
+      this file once per route and fills in that page's title, description,
+      og:*, twitter:* and canonical from src/seo/pageMeta.ts. It also swaps
+      https://medisiem.vercel.app for VITE_SITE_URL everywhere in this file,
+      so set that env var instead of editing the URLs here.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MediSIEM" />
+    <meta property="og:title" content="MediSIEM | Safety-as-a-Service Security Operations for Hospitals" />
+    <meta
+      property="og:description"
+      content="Safety-as-a-Service security for hospitals: every alert ranked by patient impact, and a clinician asked before any response cuts off a life-critical device."
+    />
+    <meta property="og:url" content="https://medisiem.vercel.app/" />
+    <meta property="og:image" content="https://medisiem.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MediSIEM | Safety-as-a-Service Security Operations for Hospitals" />
+    <meta
+      name="twitter:description"
+      content="Safety-as-a-Service security for hospitals: every alert ranked by patient impact."
+    />
+    <meta name="twitter:image" content="https://medisiem.vercel.app/og-image.png" />
+    <!-- Structured data. Deliberately no ratings, reviews or offers until
+         they're real (see README "Honest claims"). URLs follow VITE_SITE_URL
+         at build time (see the comment above). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://medisiem.vercel.app/#organization",
+            "name": "MediSIEM",
+            "url": "https://medisiem.vercel.app/",
+            "logo": "https://medisiem.vercel.app/favicon.svg",
+            "description": "Safety-as-a-Service security operations for hospitals."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://medisiem.vercel.app/#website",
+            "url": "https://medisiem.vercel.app/",
+            "name": "MediSIEM",
+            "publisher": { "@id": "https://medisiem.vercel.app/#organization" }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "MediSIEM",
+            "applicationCategory": "SecurityApplication",
+            "operatingSystem": "Linux, Docker",
+            "description": "AI-powered SIEM and threat-prioritization platform for hospitals that ranks security alerts by patient impact and requires clinician approval before isolating life-critical devices.",
+            "publisher": { "@id": "https://medisiem.vercel.app/#organization" }
+          }
+        ]
+      }
+    </script>
+    <script type="text/javascript">
+      // Companion to public/404.html's GitHub Pages SPA redirect: restores the
+      // real URL before the app mounts. A no-op on Vercel/any normal host.
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

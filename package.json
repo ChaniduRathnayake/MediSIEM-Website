@@ -1,0 +1,17 @@
+{
+  "name": "caap-medisiem-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MediSIEM marketing website (frontend + API)",
+  "scripts": {
+    "install:all": "npm install --prefix frontend && npm install --prefix backend",
+    "dev": "concurrently -n FRONTEND,BACKEND -c cyan,blue \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "frontend": "npm run dev --prefix frontend",
+    "backend": "npm run dev --prefix backend",
+    "seed": "npm run seed --prefix backend",
+    "build": "npm run build --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

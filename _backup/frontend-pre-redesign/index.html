@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MediSIEM is an AI-powered security platform that ranks hospital alerts by clinical impact, not just technical severity, so SOC teams act on the threats that matter most to patient safety."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>MediSIEM | AI-Powered Healthcare Security Platform</title>
+
+    <!--
+      Open Graph / Twitter card tags are intentionally static here rather than
+      set per-page from React: this is an unprerendered SPA, and link-preview
+      crawlers (LinkedIn, WhatsApp, Slack, etc.) fetch raw HTML without running
+      JavaScript, so client-injected tags would never be seen by them. Every
+      route therefore shares this one card. TODO: update og:url (and the
+      canonical SITE_URL in src/hooks/usePageSeo.ts, plus public/sitemap.xml
+      and public/robots.txt) once the real production domain is known.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MediSIEM" />
+    <meta property="og:title" content="MediSIEM | AI-Powered Healthcare Security Platform" />
+    <meta
+      property="og:description"
+      content="Ranking hospital security alerts by patient impact, not just technical severity — powered by the CAAP clinical alert scoring engine."
+    />
+    <meta property="og:url" content="https://medisiem.vercel.app/" />
+    <meta property="og:image" content="https://medisiem.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MediSIEM | AI-Powered Healthcare Security Platform" />
+    <meta
+      name="twitter:description"
+      content="Ranking hospital security alerts by patient impact, not just technical severity."
+    />
+    <meta name="twitter:image" content="https://medisiem.vercel.app/og-image.png" />
+    <script type="text/javascript">
+      // Companion to public/404.html's GitHub Pages SPA redirect: restores the
+      // real URL before the app mounts. A no-op on Vercel/any normal host.
+      ;(function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash)
+        }
+      })(window.location)
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

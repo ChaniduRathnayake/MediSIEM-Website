@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /*
+   * Enterprise navy palette. These override Tailwind's default slate/cyan
+   * scales directly, so every existing `bg-slate-950`, `border-slate-800`,
+   * `text-cyan-400`, etc. utility across the codebase picks up the new
+   * premium theme automatically — no need to touch each component's classes.
+   */
+  --color-slate-950: #07111f; /* Midnight Navy — primary background */
+  --color-slate-900: #0d1b2a; /* Deep Navy — secondary background, card tint base */
+  --color-slate-800: #1e334a; /* Border */
+  --color-slate-700: #2a4157;
+  --color-slate-600: #3a5570;
+  --color-slate-500: #5b7693;
+  --color-slate-400: #94a3b8; /* Secondary text */
+  --color-slate-300: #b8c4d3;
+
+  --color-cyan-300: #5ce7ff;
+  --color-cyan-400: #00d9ff; /* Cyber Cyan — primary accent */
+  --color-cyan-500: #00d9ff;
+  --color-cyan-600: #00b8d9;
+
+  --color-emerald-400: #22c55e; /* Success */
+  --color-emerald-500: #22c55e;
+  --color-amber-400: #f59e0b; /* Warning */
+  --color-amber-500: #f59e0b;
+  --color-red-400: #ef4444; /* Critical */
+  --color-red-500: #ef4444;
+
+  /* Named card surface, distinct from section backgrounds */
+  --color-card: #0f1d2d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-950 text-slate-50 antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Thin, dark-themed scrollbar to match the premium enterprise aesthetic */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-slate-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate-700);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-slate-600);
+}

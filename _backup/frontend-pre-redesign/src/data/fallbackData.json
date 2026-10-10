@@ -1,0 +1,163 @@
+{
+  "milestones": [
+    {
+      "_id": "fallback-milestone-1",
+      "title": "Research & Data Analysis",
+      "date": "2026-01-15T00:00:00.000Z",
+      "dateLabel": "Jan 2026",
+      "description": "Analyzed hospital SOC alert patterns and benchmarked against the CIC IoMT 2024 and CICIDS 2017 datasets.",
+      "status": "completed",
+      "marks": null,
+      "order": 1
+    },
+    {
+      "_id": "fallback-milestone-2",
+      "title": "Core Scoring Engine",
+      "date": "2026-04-01T00:00:00.000Z",
+      "dateLabel": "Apr 2026",
+      "description": "Built the Clinical Alert Score (CAS) engine, combining Random Forest, Isolation Forest, and K-Means.",
+      "status": "completed",
+      "marks": null,
+      "order": 2
+    },
+    {
+      "_id": "fallback-milestone-3",
+      "title": "Platform Integration",
+      "date": "2026-06-15T00:00:00.000Z",
+      "dateLabel": "Jun 2026",
+      "description": "Connected the scoring engine to a Wazuh and Elasticsearch alert pipeline with a live dashboard.",
+      "status": "completed",
+      "marks": null,
+      "order": 3
+    },
+    {
+      "_id": "fallback-milestone-4",
+      "title": "Internal Validation & Benchmarking",
+      "date": "2026-08-15T00:00:00.000Z",
+      "dateLabel": "Aug 2026",
+      "description": "Benchmarked ranking accuracy against traditional CVSS scoring across a range of simulated alert scenarios.",
+      "status": "completed",
+      "marks": null,
+      "order": 4
+    },
+    {
+      "_id": "fallback-milestone-5",
+      "title": "Public Launch Preparation",
+      "date": "2026-11-01T00:00:00.000Z",
+      "dateLabel": "Nov 2026",
+      "description": "Finalizing documentation, security review, and launch readiness for the public platform.",
+      "status": "upcoming",
+      "marks": null,
+      "order": 5
+    },
+    {
+      "_id": "fallback-milestone-6",
+      "title": "General Availability",
+      "date": "2027-02-01T00:00:00.000Z",
+      "dateLabel": "Q1 2027",
+      "description": "Opening MediSIEM and the CAAP scoring engine to early hospital partners.",
+      "status": "upcoming",
+      "marks": null,
+      "order": 6
+    }
+  ],
+  "documents": [
+    {
+      "_id": "fallback-doc-1",
+      "title": "MediSIEM Product Overview",
+      "category": "document",
+      "fileUrl": "/docs/medisiem-product-overview.pdf",
+      "date": "2026-09-01T00:00:00.000Z",
+      "description": "A high-level overview of the MediSIEM platform and the CAAP clinical alert scoring engine."
+    },
+    {
+      "_id": "fallback-doc-2",
+      "title": "CAAP Technical Whitepaper",
+      "category": "document",
+      "fileUrl": "/docs/caap-technical-whitepaper.pdf",
+      "date": "2026-09-10T00:00:00.000Z",
+      "description": "A deep dive into the Clinical Alert Score (CAS) methodology, models, and architecture."
+    },
+    {
+      "_id": "fallback-doc-3",
+      "title": "Security & Compliance Brief",
+      "category": "document",
+      "fileUrl": "/docs/security-compliance-brief.pdf",
+      "date": "2026-09-15T00:00:00.000Z",
+      "description": "How MediSIEM approaches data security, privacy, and compliance."
+    },
+    {
+      "_id": "fallback-doc-4",
+      "title": "Platform Demo Deck",
+      "category": "presentation",
+      "fileUrl": "/docs/platform-demo-deck.pdf",
+      "date": "2026-09-20T00:00:00.000Z",
+      "description": "A slide walkthrough of the MediSIEM dashboard and alert scoring workflow."
+    },
+    {
+      "_id": "fallback-doc-5",
+      "title": "Technical Architecture Overview",
+      "category": "presentation",
+      "fileUrl": "/docs/technical-architecture-overview.pdf",
+      "date": "2026-09-25T00:00:00.000Z",
+      "description": "Slide deck covering the detection pipeline: Wazuh, Elasticsearch, and the CAAP scoring engine."
+    }
+  ],
+  "team": [
+    {
+      "_id": "fallback-team-1",
+      "name": "Mr. Amila Senarathne",
+      "studentId": "N/A",
+      "role": "Advisor",
+      "component": "Strategic Advisor",
+      "email": "TODO@sliit.lk",
+      "linkedin": "",
+      "photoUrl": "",
+      "order": 1
+    },
+    {
+      "_id": "fallback-team-2",
+      "name": "Ms. Ayesha Wijesooroya",
+      "studentId": "N/A",
+      "role": "Advisor",
+      "component": "Technical Advisor",
+      "email": "TODO@sliit.lk",
+      "linkedin": "",
+      "photoUrl": "",
+      "order": 2
+    },
+    {
+      "_id": "fallback-team-3",
+      "name": "R.M.C.B. Rathnayake",
+      "studentId": "IT22061270",
+      "role": "Team Member",
+      "component": "Clinical Alert Scoring Engine",
+      "email": "it22061270@my.sliit.lk",
+      "linkedin": "",
+      "photoUrl": "",
+      "order": 3
+    },
+    {
+      "_id": "fallback-team-4",
+      "name": "W.D.S. Jayasinghe",
+      "studentId": "IT22086648",
+      "role": "Team Member",
+      "component": "Incident Response & Orchestration",
+      "email": "it22086648@my.sliit.lk",
+      "linkedin": "",
+      "photoUrl": "",
+      "order": 4
+    },
+    {
+      "_id": "fallback-team-5",
+      "name": "Anjana K.O.A",
+      "studentId": "IT22118240",
+      "role": "Team Member",
+      "component": "Threat Intelligence & IP Reputation",
+      "email": "it22118240@my.sliit.lk",
+      "linkedin": "",
+      "photoUrl": "",
+      "order": 5
+    }
+  ]
+}
