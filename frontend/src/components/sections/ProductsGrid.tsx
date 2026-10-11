@@ -33,8 +33,8 @@ export function ProductCards() {
                 <Link to={`/products/${p.slug}`} className="link-arrow">
                   Learn more <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                 </Link>
-                <Link to={`/signup?product=${p.slug}`} className="text-[13px] font-medium text-slate-400 hover:text-slate-50">
-                  Get Started
+                <Link to={`/contact?intent=pilot&product=${p.slug}`} className="text-[13px] font-medium text-slate-400 hover:text-slate-50">
+                  Request a pilot
                 </Link>
               </div>
             </article>
@@ -52,7 +52,7 @@ export default function ProductsGrid() {
         <SectionHeader
           eyebrow="Products"
           title={<span id="products-heading">Everything your security operation needs. Nothing it doesn’t.</span>}
-          lead="Start with the SIEM and threat prioritization, then add response, intelligence and compliance as you grow — all on one data platform."
+          lead="Start with the SIEM and threat prioritization, then add response, intelligence and compliance as you grow, all on one data platform."
         />
         <div className="mt-16">
           <ProductCards />

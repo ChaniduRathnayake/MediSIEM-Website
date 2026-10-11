@@ -1,6 +1,6 @@
 const TeamMember = require('../models/TeamMember');
 
-// Fields kept on the record for internal reference only — never sent to the
+// Fields kept on the record for internal reference only, never sent to the
 // public site.
 const PRIVATE_FIELDS = '-studentId -email';
 

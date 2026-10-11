@@ -23,3 +23,5 @@ services:
         sync: false
       - key: CONTACT_RECEIVER_EMAIL
         sync: false
+      - key: ADMIN_API_KEY
+        sync: false

@@ -28,7 +28,7 @@ const DOCS: Record<LegalDoc, { title: string; summary: string; updated: string; 
       {
         heading: 'What we collect',
         body: [
-          'When you submit a form on this site (contact, demo, trial or early-access requests), we collect the details you enter: your name, email address and message, plus company and job title if you provide them.',
+          'When you submit a form on this site (contact, pilot or collaboration requests), we collect the details you enter: your name, email address, organization, role and message, and, for pilot requests, the number of connected devices and your current SIEM if you provide them. We also record that you consented to be contacted.',
           'Our servers process standard technical information, such as your IP address, to deliver the site and to rate-limit form submissions against abuse.',
         ],
       },
@@ -117,7 +117,7 @@ const DOCS: Record<LegalDoc, { title: string; summary: string; updated: string; 
       {
         heading: 'Availability',
         body: [
-          'A Data Processing Agreement (DPA) is available to all customers on managed deployments, and is included as standard on the Healthcare Cluster plan. It covers processing purposes, security measures, subprocessors, international transfers and breach notification.',
+          '[PLACEHOLDER: DPA terms. MediSIEM is a research prototype and has no managed deployments yet. A DPA will be drafted before any pilot that involves processing hospital data.]',
         ],
       },
       {
@@ -157,6 +157,11 @@ export default function LegalPage({ doc }: { doc: LegalDoc }) {
             </ul>
           </nav>
           <article className="max-w-3xl">
+            {/* TODO(legal): remove this banner once counsel has reviewed the text. */}
+            <p role="note" className="mb-8 rounded-xl border border-amber-400/40 bg-amber-400/10 p-4 text-sm text-slate-200">
+              [PLACEHOLDER] Draft pending legal review. This page describes what the website does today and is not yet a reviewed legal
+              document.
+            </p>
             <p className="font-mono text-xs text-slate-500">Last updated {d.updated}</p>
             {d.sections.map((s) => (
               <section key={s.heading} className="mt-10">

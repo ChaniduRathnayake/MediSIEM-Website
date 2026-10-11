@@ -26,7 +26,7 @@ export interface Product {
   highlights: string[]
   /** Longer capability write-ups for the product detail page. */
   capabilities: ProductCapability[]
-  /** Business outcomes — what a buyer gets, not what the code does. */
+  /** Business outcomes: what a buyer gets, not what the code does. */
   outcomes: string[]
   /** Solution slugs (see solutions.ts) to cross-link. */
   relatedSolutions: string[]
@@ -36,7 +36,7 @@ export interface Product {
 // Elasticsearch telemetry pipeline, Shuffle-orchestrated playbooks, the CAAP scoring engine (Random Forest,
 // Isolation Forest, K-Means, SHAP), human-in-the-loop response with a
 // tamper-evident audit ledger, and MISP-backed IP reputation. Keep it that
-// way — don't add a capability here that the platform doesn't ship.
+// way. Don't add a capability here that the platform doesn't ship.
 export const products: Product[] = [
   {
     slug: 'siem',
@@ -45,7 +45,7 @@ export const products: Product[] = [
     icon: Activity,
     tagline: 'One place for every log, event and alert.',
     summary:
-      'Collects and correlates telemetry from servers, endpoints, network devices and connected equipment into a single searchable timeline.',
+      'Collects and correlates telemetry from servers, clinical workstations, network devices and connected medical equipment into a single searchable timeline.',
     highlights: [
       'Agent-based and agentless log collection',
       'Real-time correlation and detection rules',
@@ -56,7 +56,7 @@ export const products: Product[] = [
       {
         title: 'Unified collection',
         description:
-          'Wazuh agents and syslog forwarders stream events from Windows, Linux, network gear and connected devices into one pipeline — no separate tools per source.',
+          'Wazuh agents and syslog forwarders stream events from Windows, Linux, network gear and connected devices into one pipeline, with no separate tools per source.',
       },
       {
         title: 'Correlation at ingest',
@@ -76,7 +76,7 @@ export const products: Product[] = [
     ],
     outcomes: [
       'Replace swivel-chair investigation across disconnected consoles',
-      'Give leadership a defensible, real-time view of security posture',
+      'Give hospital leadership a defensible, real-time view of security posture',
       'Keep a single, searchable record for audits and post-incident reviews',
     ],
     relatedSolutions: ['soc-monitoring', 'threat-detection', 'compliance'],
@@ -93,7 +93,7 @@ export const products: Product[] = [
       'AI-assisted classification of attack type',
       'Anomaly detection for never-before-seen behavior',
       'Impact-aware 0–10 Alert Score with clear action tiers',
-      'Explainable results — see why every score was given',
+      'Explainable results: see why every score was given',
     ],
     capabilities: [
       {
@@ -104,7 +104,7 @@ export const products: Product[] = [
       {
         title: 'Impact-aware scoring',
         description:
-          'The Alert Score weighs threat risk, asset criticality, time sensitivity, active exploitation and temporal context — so a quiet attack on a critical system outranks a loud one on a spare laptop.',
+          'The Alert Score weighs threat risk, asset criticality, time sensitivity, active exploitation and temporal context, so a quiet attack on a critical system outranks a loud one on a spare laptop.',
       },
       {
         title: 'Three clear action tiers',
@@ -114,13 +114,13 @@ export const products: Product[] = [
       {
         title: 'Explainable by design',
         description:
-          'SHAP-based explanations show which factors drove each score, so analysts can trust — or challenge — the ranking.',
+          'SHAP-based explanations show which factors drove each score, so analysts can trust or challenge the ranking.',
       },
     ],
     outcomes: [
-      'Spend analyst time on the alerts that carry real business or patient impact',
+      'Spend analyst time on the alerts that carry real patient impact',
       'Cut through severity-only noise that buries critical incidents',
-      'Make prioritization decisions you can explain to auditors and executives',
+      'Make prioritization decisions you can explain to auditors and hospital leadership',
     ],
     relatedSolutions: ['threat-detection', 'soc-monitoring', 'incident-response'],
   },
@@ -147,7 +147,7 @@ export const products: Product[] = [
       {
         title: 'Approval gates where they matter',
         description:
-          'Actions against life-critical or business-critical systems wait for an authorized approver — automation never takes a key system offline on its own.',
+          'Actions against life-critical clinical systems wait for a clinician or other authorized approver. Automation never takes a key system offline on its own.',
       },
       {
         title: 'Tamper-evident audit ledger',
@@ -185,7 +185,7 @@ export const products: Product[] = [
       {
         title: 'Automatic enrichment',
         description:
-          'Source and destination addresses are checked against threat intelligence the moment an alert fires — no copy-pasting into lookup sites.',
+          'Source and destination addresses are checked against threat intelligence the moment an alert fires, with no copy-pasting into lookup sites.',
       },
       {
         title: 'Context-aware reputation',
@@ -205,7 +205,7 @@ export const products: Product[] = [
     ],
     outcomes: [
       'Spend less time on manual indicator lookups',
-      'Spot active campaigns targeting your sector earlier',
+      'Spot active campaigns targeting healthcare earlier',
       'Turn shared community intelligence into prioritized action',
     ],
     relatedSolutions: ['threat-detection', 'network-security'],
@@ -215,7 +215,7 @@ export const products: Product[] = [
     name: 'Endpoint & Device Security',
     shortName: 'Endpoint Security',
     icon: Laptop,
-    tagline: 'Visibility across workstations, servers and connected devices.',
+    tagline: 'Visibility across clinical workstations, servers and medical devices.',
     summary:
       'Lightweight agents monitor file integrity, configuration and behavior on endpoints, with asset criticality tracked for every device.',
     highlights: [
@@ -233,12 +233,12 @@ export const products: Product[] = [
       {
         title: 'Criticality-aware inventory',
         description:
-          'Tag each asset with its business or clinical criticality once — every future alert on it is scored accordingly.',
+          'Tag each asset with its clinical criticality once, and every future alert on it is scored accordingly.',
       },
       {
         title: 'Agentless device coverage',
         description:
-          'Devices that can’t run an agent, such as many medical and OT devices, are monitored through network flow analysis.',
+          'Devices that can’t run an agent, such as many medical and IoMT devices, are monitored through network flow analysis.',
       },
       {
         title: 'Configuration assessment',
@@ -259,7 +259,7 @@ export const products: Product[] = [
     icon: ScanSearch,
     tagline: 'Fix the vulnerabilities that matter first.',
     summary:
-      'Detects known vulnerabilities on monitored assets and ranks them by asset criticality and active exploitation — not CVSS alone.',
+      'Detects known vulnerabilities on monitored assets and ranks them by asset criticality and active exploitation, not CVSS alone.',
     highlights: [
       'Continuous detection of known CVEs',
       'Prioritized by asset criticality and exploitation',
@@ -274,11 +274,11 @@ export const products: Product[] = [
       {
         title: 'Risk-based ranking',
         description:
-          'A medium-severity flaw on a critical, internet-facing system outranks a critical flaw on an isolated test machine.',
+          'A medium-severity flaw on an ICU patient monitor outranks a critical flaw on an isolated test machine.',
       },
       {
         title: 'Remediation tracking',
-        description: 'Assign owners, track progress and see what is overdue — without exporting spreadsheets.',
+        description: 'Assign owners, track progress and see what is overdue without exporting spreadsheets.',
       },
       {
         title: 'Exposure reporting',
@@ -287,7 +287,7 @@ export const products: Product[] = [
     ],
     outcomes: [
       'Point patching effort at the highest-risk exposure first',
-      'Show measurable risk reduction to the board',
+      'Show measurable risk reduction to hospital leadership',
       'Reduce friction between security and IT operations',
     ],
     relatedSolutions: ['vulnerability-management', 'compliance'],
@@ -314,7 +314,7 @@ export const products: Product[] = [
       },
       {
         title: 'Anomaly detection',
-        description: 'Isolation Forest models flag flows that don’t fit any learned pattern — including novel attacks.',
+        description: 'Isolation Forest models flag flows that don’t fit any learned pattern, including novel attacks.',
       },
       {
         title: 'Segment-aware context',
@@ -327,7 +327,7 @@ export const products: Product[] = [
       },
     ],
     outcomes: [
-      'Catch attackers moving between systems before they reach crown-jewel assets',
+      'Catch attackers moving between systems before they reach clinical systems',
       'Protect connected devices that traditional endpoint tools miss',
       'Validate that network segmentation is working as designed',
     ],
@@ -340,7 +340,7 @@ export const products: Product[] = [
     icon: ClipboardCheck,
     tagline: 'Continuous evidence instead of annual scrambles.',
     summary:
-      'Maps detections and controls to frameworks such as HIPAA, NIST CSF, ISO/IEC 27001, PCI DSS and GDPR, and keeps audit evidence ready.',
+      'Maps detections and controls to healthcare-relevant frameworks such as HIPAA, NIST CSF, ISO/IEC 27001 and GDPR, and keeps audit evidence ready.',
     highlights: [
       'Control mapping to major frameworks',
       'Continuous compliance dashboards',
@@ -351,7 +351,7 @@ export const products: Product[] = [
       {
         title: 'Framework mapping',
         description:
-          'Detection rules and checks are tagged with the controls they support across HIPAA, NIST, ISO/IEC 27001, PCI DSS and GDPR.',
+          'Detection rules and checks are tagged with the controls they support across HIPAA, NIST, ISO/IEC 27001 and GDPR.',
       },
       {
         title: 'Continuous monitoring',

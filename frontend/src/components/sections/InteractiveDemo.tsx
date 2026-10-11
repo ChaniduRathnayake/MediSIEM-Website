@@ -29,9 +29,9 @@ interface Stage {
 
 const STAGES: Stage[] = [
   { id: 'detected', label: 'Threat detected', icon: Radar, headline: 'An anomaly appears at 02:14', body: 'Traffic to an ICU ventilator spikes 40× above its learned baseline. The classifier flags it as a denial-of-service flood.' },
-  { id: 'prioritized', label: 'Alert prioritized', icon: Gauge, headline: 'Ranked by impact, not just severity', body: 'CVSS alone rates this 6.8 — below a trojan on a billing PC. MediSIEM scores it 9.1 because a life-critical device is at risk.' },
+  { id: 'prioritized', label: 'Alert prioritized', icon: Gauge, headline: 'Ranked by impact, not just severity', body: 'CVSS alone rates this 6.8, below a trojan on a billing PC. MediSIEM scores it 9.1 because a life-critical device is at risk.' },
   { id: 'investigation', label: 'Investigation', icon: FileSearch, headline: 'Context arrives with the alert', body: 'Related events, asset details and threat-intelligence matches are attached automatically. No tab-hopping.' },
-  { id: 'analysis', label: 'Risk analysis', icon: Sparkles, headline: 'Every score is explainable', body: 'The analyst sees exactly which factors drove the score — and can challenge any of them.' },
+  { id: 'analysis', label: 'Risk analysis', icon: Sparkles, headline: 'Every score is explainable', body: 'The analyst sees exactly which factors drove the score, and can challenge any of them.' },
   { id: 'response', label: 'Recommended response', icon: ShieldCheck, headline: 'A clear next step, with a human in control', body: 'MediSIEM proposes rate-limiting the segment. Because the device is life-critical, a clinical lead must approve first.' },
   { id: 'resolved', label: 'Incident resolved', icon: CheckCircle2, headline: 'Contained in 7 minutes, fully evidenced', body: 'Traffic normalizes. Every decision is written to the tamper-evident audit ledger for review and compliance.' },
 ]
@@ -94,7 +94,7 @@ function StagePanel({ stage, approved, onApprove }: { stage: string; approved: b
           {[
             ['Asset', 'Ventilator · ICU Ward 3B · Criticality: life-critical'],
             ['Threat intel', 'Source IP matches 2 MISP indicators (botnet C2)'],
-            ['IP reputation', '12 / 100 — known malicious'],
+            ['IP reputation', '12 / 100, known malicious'],
             ['Related events', '38 flows from 3 external hosts in 4 min'],
             ['ATT&CK', 'T1498 · Network Denial of Service'],
           ].map(([k, v]) => (
@@ -128,7 +128,7 @@ function StagePanel({ stage, approved, onApprove }: { stage: string; approved: b
           <p className="text-xs text-slate-500">Recommended action</p>
           <p className="mt-1 text-base font-semibold text-slate-50">Rate-limit segment ICU-3B and block source hosts at gateway</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 rounded-lg border border-amber-500/30 bg-amber-500/5 p-3 text-sm">
-            <span className="text-amber-200">Requires approval — life-critical device</span>
+            <span className="text-amber-200">Requires approval: life-critical device</span>
             <button
               type="button"
               onClick={onApprove}

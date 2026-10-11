@@ -9,7 +9,6 @@ import { pageMeta } from '../seo/pageMeta'
 const PARTNER_BENEFITS = [
   'Hands-on onboarding with our engineering team',
   'Direct input into the product roadmap',
-  'Preferred early-access pricing',
   'A before-and-after measurement report for your leadership',
 ]
 
@@ -30,10 +29,10 @@ export default function CustomersPage({ caseStudies = false }: { caseStudies?: b
       <PageHero
         eyebrow={caseStudies ? 'Case studies' : 'Customers'}
         title="Proof you can verify."
-        lead="We publish customer results only when they’re measured and approved by the customer. While we onboard our first design partners, here’s exactly what we measure — and how you can be among the first."
+        lead="We publish customer results only when they’re measured and approved by the customer. While we onboard our first design partners, here’s exactly what we measure and how you can be among the first."
         actions={
           <Link to="/contact?intent=partner" className="btn-primary">
-            Apply for early access <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            Become a design partner <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         }
       />
@@ -66,7 +65,7 @@ export default function CustomersPage({ caseStudies = false }: { caseStudies?: b
           </Reveal>
         </div>
       </section>
-      <CTABanner primary={{ label: 'Apply for early access', to: '/contact?intent=partner' }} />
+      <CTABanner primary={{ label: 'Become a design partner', to: '/contact?intent=partner' }} />
     </>
   )
 }

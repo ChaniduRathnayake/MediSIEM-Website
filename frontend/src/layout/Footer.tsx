@@ -28,15 +28,15 @@ export default function Footer() {
               <Logo />
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-slate-400">
-              Safety-as-a-Service security operations for hospitals. Detect, prioritize and respond to the threats that matter most,
-              without putting patient care at risk.
+              Clinically aware security for hospital networks. MediSIEM detects, prioritizes and responds to threats by what they could
+              mean for patients, with a human in the loop for every clinical action.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/signup" className="btn-primary btn-sm">
-                Get Started
+              <Link to="/contact?intent=pilot" className="btn-primary btn-sm">
+                Request a pilot
               </Link>
-              <Link to="/contact?intent=demo" className="btn-secondary btn-sm">
-                Book a Demo
+              <Link to="/research#paper" className="btn-secondary btn-sm">
+                Read the paper
               </Link>
             </div>
             {socials.length > 0 && (
@@ -87,7 +87,7 @@ export default function Footer() {
             {COMPANY.availability}
           </p>
           <Link to="/contact?intent=partner" className="link-arrow">
-            Apply for early access <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            Become a design partner <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
 

@@ -14,16 +14,16 @@
   --color-slate-200: #d3dce7;
   --color-slate-300: #b8c4d3;
   --color-slate-400: #94a3b8; /* Secondary text */
-  --color-slate-500: #7d91a8; /* Tertiary text — ≥4.5:1 on cards (WCAG AA) */
+  --color-slate-500: #7d91a8; /* Tertiary text: ≥4.5:1 on cards (WCAG AA) */
   --color-slate-600: #3a5570;
   --color-slate-700: #2a4157;
   --color-slate-800: #1e334a; /* Border */
-  --color-slate-900: #0d1b2a; /* Deep Navy — secondary background */
-  --color-slate-950: #07111f; /* Midnight Navy — primary background */
+  --color-slate-900: #0d1b2a; /* Deep Navy: secondary background */
+  --color-slate-950: #07111f; /* Midnight Navy: primary background */
 
   --color-cyan-200: #a6f1ff;
   --color-cyan-300: #5ce7ff;
-  --color-cyan-400: #00d9ff; /* Cyber Cyan — primary accent */
+  --color-cyan-400: #00d9ff; /* Cyber Cyan: primary accent */
   --color-cyan-500: #00d9ff;
   --color-cyan-600: #00b8d9;
 
@@ -44,6 +44,16 @@
   --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
   --animate-dash: dash-flow 2.8s linear infinite;
   --animate-fade-up: fade-up 0.7s var(--ease-premium) both;
+  --animate-ecg: ecg-draw 3.2s var(--ease-premium) both;
+
+  @keyframes ecg-draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 
   @keyframes float-slow {
     0%,

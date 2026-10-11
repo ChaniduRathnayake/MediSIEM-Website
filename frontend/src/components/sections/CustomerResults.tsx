@@ -5,8 +5,8 @@ import { SectionHeader } from '../ui'
 import { outcomeMetrics, testimonials } from '../../data/customers'
 
 // Renders real testimonials when they exist. Until then it shows the outcomes
-// every early-access deployment is measured on — with values left as
-// "Measuring" rather than invented — plus a design-partner CTA.
+// every early-access deployment is measured on, with values left as
+// "Measuring" rather than invented, plus a design-partner CTA.
 export default function CustomerResults() {
   const hasTestimonials = testimonials.length > 0
 
@@ -70,11 +70,11 @@ export default function CustomerResults() {
                 <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-50">Shape the platform. Get results first.</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-400">
                   Early-access partners get hands-on onboarding, direct access to our engineers, influence over the roadmap and preferred
-                  pricing — in exchange for honest feedback and measured results.
+                  pricing, in exchange for honest feedback and measured results.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
                   <Link to="/contact?intent=partner" className="btn-primary">
-                    Apply for early access <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    Become a design partner <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                   <Link to="/customers" className="btn-secondary">
                     Learn more

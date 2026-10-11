@@ -16,7 +16,7 @@ export default function Roadmap() {
 
   return (
     <>
-      <PageHero eyebrow="Roadmap" title="Where MediSIEM is today — and what’s next." lead="We build in the open with our design partners. Here’s the path to general availability." />
+      <PageHero eyebrow="Roadmap" title="Where MediSIEM is today, and what’s next." lead="We build in the open with our design partners. Here’s the path to general availability." />
       <section className="section pt-12">
         <div className="container-page max-w-3xl">
           {loading ? (
@@ -55,7 +55,7 @@ export default function Roadmap() {
           )}
         </div>
       </section>
-      <CTABanner primary={{ label: 'Apply for early access', to: '/contact?intent=partner' }} />
+      <CTABanner primary={{ label: 'Become a design partner', to: '/contact?intent=partner' }} />
     </>
   )
 }

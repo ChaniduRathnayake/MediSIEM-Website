@@ -1,6 +1,6 @@
 // Illustrative sample data for product visualizations (hero and platform
 // dashboards, interactive demo). Every place this renders is labelled
-// "Sample data" in the UI — it depicts what the console shows, not
+// "Sample data" in the UI. It depicts what the console shows, not
 // measurements from a customer environment.
 
 export type Tier = 'Immediate' | 'Investigate' | 'Monitor'
@@ -15,8 +15,8 @@ export interface SampleAlert {
   time: string
 }
 
-// Scores follow the documented CAS formula and match comparisonScenario.ts
-// where the alerts overlap.
+// Illustrative sample alerts for UI previews, not measured results. Scores
+// are in the CAS range and tiers follow getCASAction.
 export const sampleAlerts: SampleAlert[] = [
   { id: 'A-2041', title: 'Denial-of-service flood', asset: 'ICU ventilator · Ward 3B', score: 9.1, tier: 'Immediate', technique: 'T1498', time: '02:14' },
   { id: 'A-2039', title: 'Ransomware signature', asset: 'Radiology PACS server', score: 8.1, tier: 'Immediate', technique: 'T1486', time: '02:09' },
@@ -58,7 +58,7 @@ export const incidentStatus = [
 ]
 
 export const timeline = [
-  { time: '02:14', label: 'DoS flood on ICU ventilator scored 9.1 — Immediate', tone: 'critical' as const },
+  { time: '02:14', label: 'DoS flood on ICU ventilator scored 9.1, Immediate', tone: 'critical' as const },
   { time: '02:15', label: 'Network isolation proposed · awaiting clinical approval', tone: 'warning' as const },
   { time: '02:17', label: 'Approved by charge nurse · segment rate-limited', tone: 'info' as const },
   { time: '02:21', label: 'Traffic normalized · incident contained', tone: 'success' as const },

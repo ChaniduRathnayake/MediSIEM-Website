@@ -13,12 +13,12 @@ export default function IndustryDetailPage() {
   const industry = getIndustry(slug)
 
   usePageSeo({
-    ...(industry ? industryMeta(industry) : { title: 'Industry not found | MediSIEM', description: 'This industry page could not be found.' }),
+    ...(industry ? industryMeta(industry) : { title: 'Page not found | MediSIEM', description: 'This care setting page could not be found.' }),
     path: industry ? `/industries/${industry.slug}` : undefined,
     noindex: !industry,
     jsonLd: industry
       ? breadcrumbJsonLd([
-          { name: 'Industries', path: '/industries' },
+          { name: 'Healthcare', path: '/industries' },
           { name: industry.name, path: `/industries/${industry.slug}` },
         ])
       : undefined,
@@ -27,13 +27,13 @@ export default function IndustryDetailPage() {
   if (!industry) return <NotFound />
 
   const others = industries.filter((i) => i.slug !== industry.slug)
-  // The cited statistics are all healthcare-specific; only show them there.
-  const stats = industry.slug === 'healthcare' ? statistics : []
+  // The cited statistics are healthcare-wide, so they apply to every care setting.
+  const stats = statistics
 
   return (
     <>
       <PageHero
-        breadcrumb={[{ label: 'Industries', to: '/industries' }, { label: industry.name }]}
+        breadcrumb={[{ label: 'Healthcare', to: '/industries' }, { label: industry.name }]}
         eyebrow={`MediSIEM for ${industry.name}`}
         title={industry.headline}
         lead={industry.description}
@@ -50,7 +50,7 @@ export default function IndustryDetailPage() {
       />
 
       {stats.length > 0 && (
-        <section className="border-b border-slate-800/70 py-14" aria-label="Sector statistics">
+        <section className="border-b border-slate-800/70 py-14" aria-label="Healthcare statistics">
           <div className="container-page grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((s) => (
               <div key={s.id}>
@@ -112,7 +112,7 @@ export default function IndustryDetailPage() {
 
       <section className="border-t border-slate-800/70 py-16">
         <div className="container-page">
-          <h2 className="text-xl font-semibold text-slate-50">Other industries</h2>
+          <h2 className="text-xl font-semibold text-slate-50">Other care settings</h2>
           <ul className="mt-6 flex flex-wrap gap-2">
             {others.map((o) => (
               <li key={o.slug}>

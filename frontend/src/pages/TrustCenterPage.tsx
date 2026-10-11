@@ -100,7 +100,7 @@ export default function TrustCenterPage({ securityFocus = false }: { securityFoc
             <p className="lead mt-4 max-w-2xl">
               MediSIEM maps its detections and reporting to these frameworks so you can use it as evidence for your own programs.{' '}
               <strong className="font-semibold text-slate-200">MediSIEM does not currently hold a third-party certification or attestation.</strong>{' '}
-              We’ll update this page — with the report available on request — when that changes.
+              We’ll update this page, with the report available on request, when that changes.
             </p>
             <div className="mt-8">
               <ComplianceList />
@@ -111,9 +111,9 @@ export default function TrustCenterPage({ securityFocus = false }: { securityFoc
 
       <CTABanner
         title="Running a vendor security review?"
-        lead="Our team can walk you through architecture, data handling and our security questionnaire responses."
-        primary={{ label: 'Contact security team', to: '/contact?intent=security' }}
-        secondary={{ label: 'Talk to Sales', to: '/contact?intent=sales' }}
+        lead="The team can walk you through the architecture and data handling of the research prototype, and what is still to be done before a production deployment."
+        primary={{ label: 'Contact the team', to: '/contact?intent=security' }}
+        secondary={{ label: 'Request a pilot', to: '/contact?intent=pilot' }}
       />
     </>
   )

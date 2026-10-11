@@ -38,7 +38,7 @@ export default function HospitalFit() {
           <Link to="/pricing" className="btn-primary btn-sm">
             See pricing <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
-          <Link to="/industries/healthcare" className="btn-secondary btn-sm">
+          <Link to="/industries/hospitals" className="btn-secondary btn-sm">
             MediSIEM for hospitals
           </Link>
         </Reveal>

@@ -28,7 +28,7 @@ export interface ProblemCard {
   icon: LucideIcon
   title: string
   description: string
-  /** Optional cited statistic — must reference an entry in statistics.ts. */
+  /** Optional cited statistic. Must reference an entry in statistics.ts. */
   statId?: string
 }
 
@@ -45,32 +45,32 @@ export const problems: ProblemCard[] = [
     icon: EyeOff,
     title: 'Limited visibility',
     description:
-      'Logs live in a dozen consoles, and connected devices that can’t run an agent are often not monitored at all.',
+      'Logs live in a dozen consoles, and medical devices that can’t run an agent are often not monitored at all.',
     statId: 'iomt-vulnerabilities',
   },
   {
     icon: Timer,
     title: 'Slow incident response',
     description:
-      'Without a clear next step, triage depends on who is on shift — and every hour of dwell time raises the cost of a breach.',
+      'Without a clear next step, triage depends on who is on shift, and every hour of dwell time raises the cost of a breach.',
     statId: 'breach-cost',
   },
   {
     icon: Layers,
     title: 'Growing attack surface',
-    description: 'Cloud workloads, remote users and connected equipment add exposure faster than teams can assess it.',
+    description: 'Connected medical devices, cloud patient records and remote clinicians add exposure faster than teams can assess it.',
   },
   {
     icon: Radar,
     title: 'Targeted, disruptive attacks',
     description:
-      'Ransomware groups deliberately target organizations where downtime is unacceptable — and the impact spreads beyond the victim.',
+      'Ransomware groups deliberately target hospitals, where downtime is unacceptable, and the impact spreads to patients and nearby facilities.',
     statId: 'ransomware-share',
   },
   {
     icon: FileWarning,
     title: 'Compliance pressure',
-    description: 'Regulators expect continuous evidence, but most teams still assemble it by hand before every audit.',
+    description: 'Health-data regulators expect continuous evidence, but most hospitals still assemble it by hand before every audit.',
   },
 ]
 
@@ -88,16 +88,16 @@ export interface Pillar {
 export const pillars: Pillar[] = [
   { icon: Radar, title: 'Detects threats', description: 'ML classification and anomaly detection across endpoints, network and logs.' },
   { icon: Gauge, title: 'Prioritizes risk', description: 'Every alert scored 0–10 by the impact at stake, not severity alone.' },
-  { icon: Activity, title: 'Provides visibility', description: 'One timeline across servers, endpoints, network and connected devices.' },
-  { icon: Workflow, title: 'Automates response', description: 'Recommended actions with approval gates for critical systems.' },
-  { icon: ClipboardCheck, title: 'Improves compliance', description: 'Controls mapped to major frameworks with evidence on demand.' },
+  { icon: Activity, title: 'Provides visibility', description: 'One timeline across servers, workstations, network and medical devices.' },
+  { icon: Workflow, title: 'Automates response', description: 'Recommended actions, with clinician approval for life-critical devices.' },
+  { icon: ClipboardCheck, title: 'Improves compliance', description: 'Controls mapped to HIPAA, GDPR and more, with evidence on demand.' },
   { icon: BrainCircuit, title: 'Reduces analyst workload', description: 'Explainable rankings so teams act first on what matters most.' },
 ]
 
 export interface Feature {
   icon: LucideIcon
   title: string
-  /** The business value — why a buyer cares. */
+  /** The business value: why a buyer cares. */
   value: string
 }
 
@@ -110,7 +110,7 @@ export const features: Feature[] = [
   {
     icon: Fingerprint,
     title: 'Behavioral Analytics',
-    value: 'Spot compromised accounts and devices by how they behave — even when the malware is brand new.',
+    value: 'Spot compromised accounts and devices by how they behave, even when the malware is brand new.',
   },
   {
     icon: Workflow,
@@ -120,17 +120,17 @@ export const features: Feature[] = [
   {
     icon: ScanSearch,
     title: 'Vulnerability Management',
-    value: 'Direct limited patching capacity at the exposure most likely to hurt the business.',
+    value: 'Direct limited patching capacity at the exposure most likely to harm patients or stop care.',
   },
   {
     icon: Activity,
     title: 'Real-Time Monitoring',
-    value: 'Know what is happening across your estate now — not in tomorrow morning’s report.',
+    value: 'Know what is happening across every ward and clinical system now, not in tomorrow morning’s report.',
   },
   {
     icon: ShieldCheck,
     title: 'Security Posture Management',
-    value: 'Give the board a single, defensible measure of risk and how it is trending.',
+    value: 'Give hospital leadership a single, defensible measure of risk and how it is trending.',
   },
   {
     icon: ClipboardCheck,
@@ -140,7 +140,7 @@ export const features: Feature[] = [
   {
     icon: Globe2,
     title: 'Threat Intelligence',
-    value: 'Turn community intelligence into prioritized action against campaigns targeting your sector.',
+    value: 'Turn community intelligence into prioritized action against campaigns targeting healthcare.',
   },
   {
     icon: Plug,
@@ -150,7 +150,7 @@ export const features: Feature[] = [
   {
     icon: LineChart,
     title: 'Security Analytics',
-    value: 'Measure what matters — workload, response times and exposure — and prove improvement.',
+    value: 'Measure what matters (workload, response times and exposure) and prove improvement.',
   },
 ]
 
@@ -167,7 +167,7 @@ export const workflowSteps: WorkflowStep[] = [
     icon: Plug,
     step: '01',
     title: 'Connect',
-    description: 'Deploy lightweight agents and forward logs from servers, endpoints, network and cloud.',
+    description: 'Deploy lightweight agents and forward logs from servers, workstations, medical devices and cloud.',
     detail: 'Agents · Syslog · Network flows',
   },
   {
@@ -193,21 +193,12 @@ export const workflowSteps: WorkflowStep[] = [
   },
 ]
 
-export const heroTrustIndicators = [
-  'Built for hospitals',
-  'Clinician approval before isolation',
-  'AI-powered prioritization',
-  'Built on Wazuh & Shuffle',
-  'Flat monthly subscription',
-]
-
 /** Framework names the platform maps detections to. Mapping ≠ certification. */
 export const frameworkCoverage = [
   'MITRE ATT&CK',
   'NIST CSF 2.0',
   'HIPAA Security Rule',
   'ISO/IEC 27001',
-  'PCI DSS',
   'CIS Controls',
   'GDPR',
 ]

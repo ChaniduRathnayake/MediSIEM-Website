@@ -51,7 +51,7 @@ export default function ResourcesGrid() {
           align="left"
           eyebrow="Resources"
           title={<span id="resources-heading">Go deeper.</span>}
-          lead="Research, guides and documentation for security leaders and the engineers who run their platforms."
+          lead="Research, guides and documentation for hospital security leaders and the engineers who run their platforms."
           actions={
             <Link to="/resources" className="link-arrow">
               Browse all resources <ArrowRight className="h-4 w-4" aria-hidden="true" />

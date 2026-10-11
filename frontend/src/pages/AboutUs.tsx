@@ -9,7 +9,7 @@ import { pageMeta } from '../seo/pageMeta'
 
 const PRINCIPLES = [
   { icon: Scale, title: 'Impact over noise', body: 'Security effort should follow real-world consequences, not whichever tool shouts loudest.' },
-  { icon: Eye, title: 'Explainable by default', body: 'If a model ranks an alert, an analyst should be able to see why — and disagree.' },
+  { icon: Eye, title: 'Explainable by default', body: 'If a model ranks an alert, an analyst should be able to see why, and disagree.' },
   { icon: Microscope, title: 'Evidence, not hype', body: 'We publish numbers only when they’re measured and verified. No invented statistics.' },
 ]
 
@@ -26,7 +26,7 @@ export default function AboutUs() {
       <PageHero
         eyebrow="About"
         title="We started where the stakes are highest: hospitals."
-        lead="In a hospital, the wrong alert at the top of the queue can affect patient care. MediSIEM was built to rank threats by what they actually put at risk, and that approach now protects any organization that can’t afford downtime."
+        lead="In a hospital, the wrong alert at the top of the queue can affect patient care. MediSIEM was built to rank threats by what they actually put at risk, and every part of the platform is built for the realities of healthcare."
       />
 
       <section className="section" aria-labelledby="principles-heading">

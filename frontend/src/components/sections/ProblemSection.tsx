@@ -1,7 +1,10 @@
-import { ExternalLink } from 'lucide-react'
+import { Radar, ListOrdered, Siren } from 'lucide-react'
 import Reveal from '../Reveal'
 import { SectionHeader } from '../ui'
-import { getStatistic, problems } from '../../data/marketing'
+import { ResearchFootnote } from '../research'
+import { contextStat, gaps } from '../../data/research'
+
+const ICONS = [Radar, ListOrdered, Siren]
 
 export default function ProblemSection() {
   return (
@@ -9,44 +12,37 @@ export default function ProblemSection() {
       <div className="container-page">
         <SectionHeader
           eyebrow="The problem"
-          title={<span id="problem-heading">Security teams aren’t short on alerts. They’re short on clarity.</span>}
-          lead="Every tool reports its own severity. None of them know which system keeps the business — or a patient — running. So the alert that matters waits in line behind hundreds that don’t."
+          title={<span id="problem-heading">A weak link at any stage still reaches the patient.</span>}
+          lead="Detection, prioritization and response all have to be clinically aware. Today, each one has a gap."
         />
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {problems.map((p, i) => {
-            const stat = getStatistic(p.statId)
-            const Icon = p.icon
+        <div className="mt-14 grid gap-4 md:grid-cols-3">
+          {gaps.map((g, i) => {
+            const Icon = ICONS[i]
             return (
-              <Reveal key={p.title} delayMs={(i % 3) * 80} className="h-full">
-                <article className="card flex h-full flex-col p-6">
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-800 bg-slate-950/50 text-slate-300">
+              <Reveal key={g.stage} delayMs={i * 80} className="h-full">
+                <article className="card flex h-full flex-col p-6 sm:p-7">
+                  <div className="flex items-center justify-between">
+                    <span className="icon-tile">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
-                    {stat && <span className="text-3xl font-semibold tracking-tight text-slate-50 tabular-nums">{stat.value}</span>}
+                    <span className="font-mono text-[11px] tracking-[0.16em] text-slate-500 uppercase">
+                      Gap {i + 1} · {g.stage}
+                    </span>
                   </div>
-                  <h3 className="mt-5 text-base font-semibold text-slate-50">{p.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">{p.description}</p>
-                  {stat && (
-                    <p className="mt-5 border-t border-slate-800 pt-4 text-xs leading-relaxed text-slate-500">
-                      <span className="text-slate-400">{stat.value}</span> — {stat.label}.{' '}
-                      <a
-                        href={stat.sourceUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-slate-400 underline decoration-slate-700 underline-offset-2 hover:text-cyan-300"
-                      >
-                        {stat.source}, {stat.year}
-                        <ExternalLink className="h-3 w-3" aria-hidden="true" />
-                      </a>
-                    </p>
-                  )}
+                  <h3 className="mt-6 text-lg font-semibold text-balance text-slate-50">{g.title}</h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-slate-400">{g.body}</p>
                 </article>
               </Reveal>
             )
           })}
         </div>
+        <ResearchFootnote className="mt-5" />
+
+        <Reveal className="mx-auto mt-12 max-w-3xl text-center">
+          <p className="text-lg leading-relaxed text-balance text-slate-200">{contextStat.text}</p>
+          <p className="mt-2 text-xs text-slate-500">Source: {contextStat.source}</p>
+        </Reveal>
       </div>
     </section>
   )

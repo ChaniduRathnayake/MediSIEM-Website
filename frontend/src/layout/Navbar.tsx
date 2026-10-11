@@ -169,14 +169,11 @@ export default function Navbar() {
 
         <div className="ml-auto hidden items-center gap-2 lg:flex">
           <ThemeToggle />
-          <Link to="/login" className="btn-ghost btn-sm">
-            Login
+          <Link to="/research#paper" className="btn-secondary btn-sm hidden xl:inline-flex">
+            Read the paper
           </Link>
-          <Link to="/contact?intent=sales" className="btn-secondary btn-sm hidden xl:inline-flex">
-            Contact Sales
-          </Link>
-          <Link to="/signup" className="btn-primary btn-sm">
-            Get Started
+          <Link to="/contact?intent=pilot" className="btn-primary btn-sm">
+            Request a pilot
           </Link>
         </div>
 
@@ -243,17 +240,12 @@ export default function Navbar() {
               ))}
             </ul>
             <div className="mt-auto grid gap-3 pt-8 pb-[max(1rem,env(safe-area-inset-bottom))]">
-              <Link to="/signup" className="btn-primary">
-                Get Started
+              <Link to="/contact?intent=pilot" className="btn-primary">
+                Request a pilot
               </Link>
-              <div className="grid grid-cols-2 gap-3">
-                <Link to="/contact?intent=sales" className="btn-secondary">
-                  Contact Sales
-                </Link>
-                <Link to="/login" className="btn-secondary">
-                  Login
-                </Link>
-              </div>
+              <Link to="/research#paper" className="btn-secondary">
+                Read the paper
+              </Link>
             </div>
           </div>
         </div>

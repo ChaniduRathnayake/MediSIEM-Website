@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { Check } from 'lucide-react'
 import Logo from '../components/Logo'
 import LeadForm from '../components/LeadForm'
@@ -6,19 +6,17 @@ import { usePageSeo } from '../hooks/usePageSeo'
 import { pageMeta } from '../seo/pageMeta'
 
 const STEPS = [
-  { title: 'Tell us about your environment', body: 'Size, key systems and the tools you already run.' },
-  { title: 'Scoping call with an engineer', body: '30 minutes to agree which segment to connect first.' },
-  { title: 'Connect and see your alerts ranked', body: 'Guided onboarding — usually live within days.' },
+  { title: 'Tell us about your hospital', body: 'Your connected devices, which ones sustain life, and the SIEM you run today.' },
+  { title: 'Scope the pilot together', body: 'Agree which network segment and devices to start with. [PLACEHOLDER: pilot duration and success criteria]' },
+  { title: 'Build the device registry', body: 'Assign clinical criticality and life-sustaining designations, then connect to your Wazuh pipeline.' },
 ]
 
-// "Get Started" / "Start Free Trial". Trials are onboarded by our team while
-// MediSIEM is in early access, so this captures a trial request rather than
-// creating a self-serve account.
+// Kept at /signup so old "Get started" links still land somewhere useful.
+// MediSIEM has no self-serve accounts: this captures a pilot request.
 export default function SignupPage() {
   const [params] = useSearchParams()
-  const plan = params.get('plan')
   const product = params.get('product')
-  const context = [plan && `Plan: ${plan}`, product && `Product: ${product}`].filter(Boolean).join(', ')
+  const context = product ? `Product: ${product}` : ''
 
   usePageSeo({
     ...pageMeta['/signup'],
@@ -32,10 +30,10 @@ export default function SignupPage() {
       <div className="container-page grid gap-12 py-14 sm:py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
         <div>
           <Logo />
-          <h1 className="display-title mt-10 text-balance">Start your guided trial.</h1>
+          <h1 className="display-title mt-10 text-balance">Request a MediSIEM pilot.</h1>
           <p className="lead mt-5 max-w-lg">
-            Connect part of your environment and see your own alerts ranked by what’s at stake. During early access, every trial is set up
-            with one of our engineers.
+            See your own alerts ranked by clinical impact, alongside the Wazuh deployment you already run. MediSIEM is a research
+            prototype, so every pilot is scoped and set up with the team.
           </p>
           <ol className="mt-10 space-y-6">
             {STEPS.map((s, i) => (
@@ -51,7 +49,7 @@ export default function SignupPage() {
             ))}
           </ol>
           <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400">
-            {['No credit card required', 'Your data stays yours', 'Cancel any time'].map((t) => (
+            {['Runs alongside your existing SIEM', 'Your data stays yours', 'Human approval on every clinical action'].map((t) => (
               <li key={t} className="flex items-center gap-1.5">
                 <Check className="h-4 w-4 text-cyan-400" aria-hidden="true" /> {t}
               </li>
@@ -59,15 +57,9 @@ export default function SignupPage() {
           </ul>
         </div>
         <div className="card p-6 sm:p-10">
-          <h2 className="text-xl font-semibold text-slate-50">Request your trial</h2>
-          <p className="mt-1 text-sm text-slate-400">
-            Already a customer?{' '}
-            <Link to="/login" className="text-cyan-400 hover:text-cyan-300">
-              Log in
-            </Link>
-          </p>
+          <h2 className="text-xl font-semibold text-slate-50">Pilot request</h2>
           <div className="mt-8">
-            <LeadForm intent="trial" context={context || undefined} submitLabel="Start Free Trial" allowTopicChange={false} />
+            <LeadForm intent="pilot" context={context || undefined} submitLabel="Request a pilot" allowTopicChange={false} />
           </div>
         </div>
       </div>

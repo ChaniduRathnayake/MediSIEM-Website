@@ -19,10 +19,10 @@ export interface Integration {
 }
 
 // Only mark an integration 'available' if the platform actually ships it.
-// Everything else stays 'roadmap' and is shown under "On the roadmap" — never
+// Everything else stays 'roadmap' and is shown under "On the roadmap", never
 // as supported. Brand names are rendered as plain text, not logos.
 export const integrations: Integration[] = [
-  // Shipping today — the platform is built on these.
+  // Shipping today: the platform is built on these.
   { name: 'Wazuh', category: 'Telemetry & SIEM', status: 'available', description: 'Agents, log collection and detection rules.' },
   { name: 'Shuffle', category: 'Response Orchestration', status: 'available', description: 'Open-source SOAR that runs MediSIEM’s safety playbooks.' },
   { name: 'Elasticsearch', category: 'Telemetry & SIEM', status: 'available', description: 'Event storage, search and analytics.' },
@@ -32,7 +32,7 @@ export const integrations: Integration[] = [
   { name: 'Docker', category: 'Developer', status: 'available', description: 'Containerized deployment on-prem or in your cloud.' },
   { name: 'REST API', category: 'Developer', status: 'available', description: 'Programmatic access to alert scores and enrichment.' },
 
-  // Planned — shown as roadmap only.
+  // Planned: shown as roadmap only.
   { name: 'Microsoft 365', category: 'Cloud', status: 'roadmap', description: 'Audit and sign-in logs.' },
   { name: 'AWS', category: 'Cloud', status: 'roadmap', description: 'CloudTrail, GuardDuty and VPC flow logs.' },
   { name: 'Microsoft Azure', category: 'Cloud', status: 'roadmap', description: 'Activity logs and Defender alerts.' },

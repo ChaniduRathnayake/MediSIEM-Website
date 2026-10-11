@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { CTABanner, PageHero } from '../components/ui'
 import { ProductCards } from '../components/sections/ProductsGrid'
-import PricingSection from '../components/sections/PricingSection'
 import { usePageSeo } from '../hooks/usePageSeo'
 import { pageMeta } from '../seo/pageMeta'
 
@@ -16,15 +15,15 @@ export default function ProductsPage() {
     <>
       <PageHero
         eyebrow="Products"
-        title="A complete security operations platform, one module at a time."
-        lead="Every MediSIEM product shares the same data, the same Alert Score and the same console — so adding a capability never means adding another silo."
+        title="Three modules, one clinically aware pipeline."
+        lead="MedShield detects, CAAP prioritizes and the response engine acts. All three share the same device registry and the same clinical criticality scores."
         actions={
           <>
-            <Link to="/signup" className="btn-primary">
-              Start Free Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            <Link to="/contact?intent=pilot" className="btn-primary">
+              Request a pilot <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <Link to="/pricing" className="btn-secondary">
-              View Pricing
+            <Link to="/research#paper" className="btn-secondary">
+              Read the research paper
             </Link>
           </>
         }
@@ -34,7 +33,6 @@ export default function ProductsPage() {
           <ProductCards />
         </div>
       </section>
-      <PricingSection />
       <CTABanner />
     </>
   )

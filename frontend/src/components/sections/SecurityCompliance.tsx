@@ -42,7 +42,7 @@ export default function SecurityCompliance() {
         <SectionHeader
           eyebrow="Security & compliance"
           title={<span id="trust-heading">Security you can verify, from the platform up.</span>}
-          lead="We hold ourselves to the standards we help you meet — and we’re transparent about exactly where we are."
+          lead="We hold ourselves to the standards we help you meet, and we’re transparent about exactly where we are."
         />
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

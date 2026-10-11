@@ -9,13 +9,13 @@ export interface Statistic {
 
 // Every number here is independently verified against its primary source
 // (fetched directly, not taken from a secondary summary) and linked.
-// Do not add a number without a citation — see README "Statistics" section
+// Do not add a number without a citation. See README "Statistics" section
 // before editing.
 export const statistics: Statistic[] = [
   {
     id: 'breach-cost',
     value: '$7.42M',
-    label: 'Average cost of a healthcare data breach — the costliest industry of any, 14 years running',
+    label: 'Average cost of a healthcare data breach, the costliest industry of any, 14 years running',
     source: 'IBM Cost of a Data Breach Report 2025 (Ponemon Institute), via HealthTech Security',
     sourceUrl:
       'https://www.techtarget.com/healthtechsecurity/news/366628031/Healthcare-remains-costliest-industry-for-breaches-at-742M',
@@ -24,7 +24,7 @@ export const statistics: Statistic[] = [
   {
     id: 'ransomware-share',
     value: '22%',
-    label: 'Of all disclosed ransomware attacks targeted healthcare in 2025 — more than any other sector',
+    label: 'Of all disclosed ransomware attacks targeted healthcare in 2025, more than any other sector',
     source: 'BlackFog 2025 State of Ransomware Report, via HIPAA Journal',
     sourceUrl: 'https://www.hipaajournal.com/healthcare-most-targeted-sector-2025-ransomware/',
     year: '2025',

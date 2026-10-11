@@ -6,7 +6,7 @@ import { usePageSeo } from '../hooks/usePageSeo'
 import { pageMeta } from '../seo/pageMeta'
 
 const WHY = [
-  { icon: HeartPulse, title: 'Work that matters', body: 'Your code helps decide which threat gets stopped first — in places where that can affect patient care.' },
+  { icon: HeartPulse, title: 'Work that matters', body: 'Your code helps decide which threat gets stopped first, in places where that can affect patient care.' },
   { icon: BrainCircuit, title: 'Hard, real problems', body: 'Applied machine learning, detection engineering and explainability, on real security telemetry.' },
   { icon: ShieldCheck, title: 'Early and influential', body: 'Join before general availability and shape the product, the team and how we work.' },
 ]
@@ -24,7 +24,7 @@ export default function CareersPage() {
       <PageHero
         eyebrow="Careers"
         title="Help security teams stop the threats that matter."
-        lead="We’re a small team building security software for organizations where downtime isn’t an option."
+        lead="We’re a small team building security software for hospitals and the patients who depend on them."
       />
       <section className="section">
         <div className="container-page">

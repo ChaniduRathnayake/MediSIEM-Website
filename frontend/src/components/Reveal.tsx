@@ -11,7 +11,7 @@ function prefersReducedMotion() {
 }
 
 // Fades + slides children in once they scroll into view. Plain
-// IntersectionObserver + CSS transition — no animation library.
+// IntersectionObserver + CSS transition, with no animation library.
 //
 // The observer is attached from a ref callback rather than an effect: on
 // lazy-loaded routes React 19 can run a Suspense-resolved subtree's effects

@@ -15,9 +15,9 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Industries"
-        title="Security that understands what your organization can’t afford to lose."
-        lead="Built first for hospitals, where the wrong priority can affect patient care. The same impact-aware approach protects banks, governments, manufacturers and growing businesses."
+        eyebrow="Healthcare"
+        title="Security built for every place care happens."
+        lead="From large public hospitals to small clinics and diagnostic centres, MediSIEM ranks every alert by what it puts at risk for patients, and never lets automation cut off a life-critical device."
         actions={
           <Link to="/contact?intent=expert" className="btn-primary">
             Talk to a Security Expert <ArrowRight className="h-4 w-4" aria-hidden="true" />

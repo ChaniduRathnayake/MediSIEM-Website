@@ -7,11 +7,11 @@ import { industries } from '../../data/industries'
 
 export function IndustryCards() {
   return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {industries.map((ind, i) => {
         const Icon = ind.icon
         return (
-          <Reveal key={ind.slug} delayMs={(i % 4) * 70} className="h-full">
+          <Reveal key={ind.slug} delayMs={(i % 3) * 70} className="h-full">
             <Link to={`/industries/${ind.slug}`} className="card-interactive group flex h-full flex-col p-6">
               <div className="flex items-center justify-between">
                 <span className="icon-tile">
@@ -42,13 +42,13 @@ export default function IndustriesSpotlight() {
     <section className="section border-y border-slate-800/70 bg-slate-900/25" aria-labelledby="industries-heading">
       <div className="container-page">
         <SectionHeader
-          eyebrow="Industries"
-          title={<span id="industries-heading">Built for organizations where downtime isn’t an option.</span>}
-          lead="MediSIEM is built first for hospitals, from public healthcare clusters to small private hospitals. The same impact-aware approach adapts to banks, factories and other organizations that can’t afford downtime."
+          eyebrow="Care settings"
+          title={<span id="industries-heading">Built for every place care happens.</span>}
+          lead="From public healthcare clusters to small private clinics, MediSIEM ranks every alert by what it puts at risk for patients, and adapts to how each care setting works."
         />
 
         <Reveal className="mt-14">
-          <div role="tablist" aria-label="Industries" className="flex gap-1.5 overflow-x-auto pb-2 sm:flex-wrap sm:justify-center">
+          <div role="tablist" aria-label="Care settings" className="flex gap-1.5 overflow-x-auto pb-2 sm:flex-wrap sm:justify-center">
             {industries.map((i) => {
               const TabIcon = i.icon
               const selected = i.slug === active
@@ -86,7 +86,7 @@ export default function IndustriesSpotlight() {
                     MediSIEM for {ind.name} <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                   <Link to="/industries" className="btn-secondary btn-sm">
-                    All industries
+                    All care settings
                   </Link>
                 </div>
               </div>

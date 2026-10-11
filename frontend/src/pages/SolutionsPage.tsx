@@ -16,8 +16,8 @@ export default function SolutionsPage() {
     <>
       <PageHero
         eyebrow="Solutions"
-        title="Built around the problems security teams actually have."
-        lead="Whether you’re drowning in alerts, preparing for an audit or protecting systems that can never go down, MediSIEM gives you a clear next step."
+        title="Built around the problems hospital security teams actually have."
+        lead="Whether you’re drowning in alerts, preparing for a HIPAA audit or protecting devices that keep patients alive, MediSIEM gives you a clear next step."
         actions={
           <Link to="/contact?intent=expert" className="btn-primary">
             Talk to a Security Expert <ArrowRight className="h-4 w-4" aria-hidden="true" />

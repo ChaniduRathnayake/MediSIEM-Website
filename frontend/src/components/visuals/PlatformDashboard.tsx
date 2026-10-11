@@ -154,7 +154,7 @@ export default function PlatformDashboard() {
               />
               <p className="mt-2 text-[11px] text-slate-500">
                 {range === '24h'
-                  ? 'Spike at 23:00 correlated into 1 incident — not 1,180 separate alerts.'
+                  ? 'Spike at 23:00 correlated into 1 incident, not 1,180 separate alerts.'
                   : 'Prioritized volume trending down as asset criticality is tuned.'}
               </p>
             </Panel>

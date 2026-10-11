@@ -4,7 +4,7 @@ import Reveal from '../Reveal'
 import { SectionHeader, StatusChip } from '../ui'
 import { availableIntegrations, roadmapIntegrations, type Integration } from '../../data/integrations'
 
-/** Text wordmark tile — we deliberately don't reproduce third-party logos. */
+/** Text wordmark tile. We deliberately don't reproduce third-party logos. */
 export function IntegrationTile({ integration, showDescription = false }: { integration: Integration; showDescription?: boolean }) {
   const available = integration.status === 'available'
   return (
@@ -32,7 +32,7 @@ export default function IntegrationsShowcase() {
             align="left"
             eyebrow="Integrations"
             title={<span id="integrations-heading">Works with the stack you already run.</span>}
-            lead="MediSIEM is built on open, widely deployed security technology and exposes a REST API. Native connectors for major cloud, network and ITSM platforms are on our roadmap — tell us which you need first."
+            lead="MediSIEM is built on open, widely deployed security technology and exposes a REST API. Native connectors for major cloud, network and ITSM platforms are on our roadmap. Tell us which you need first."
             actions={
               <>
                 <Link to="/integrations" className="btn-primary">

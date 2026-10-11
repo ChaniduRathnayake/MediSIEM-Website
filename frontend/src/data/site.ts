@@ -1,12 +1,11 @@
 import { products } from './products'
-import { solutions } from './solutions'
 import { industries } from './industries'
 
 export const COMPANY = {
   name: 'MediSIEM',
-  tagline: 'Safety-as-a-Service for hospitals',
-  // Pre-GA: keep visitor expectations honest (see fallbackData milestones).
-  availability: 'Now onboarding early-access partners',
+  tagline: 'Clinically aware security for hospital networks',
+  // Research stage: keep visitor expectations honest.
+  availability: 'Research prototype. Looking for hospital pilot partners.',
 }
 
 export interface MenuLink {
@@ -25,76 +24,76 @@ export interface MenuSection {
 
 export const mainNav: MenuSection[] = [
   {
-    label: 'Products',
-    to: '/products',
-    links: products.map((p) => ({ label: p.shortName, to: `/products/${p.slug}`, description: p.tagline })),
+    label: 'Platform',
+    to: '/platform',
+    links: [
+      { label: 'How it works', to: '/platform#modules', description: 'MedShield, CAAP and criticality-gated response.' },
+      { label: 'CVSS vs CAS demo', to: '/platform#demo', description: 'Watch the same alert rank differently by device.' },
+      { label: 'Use cases', to: '/platform#use-cases', description: 'Ventilator, insulin pump and admin PC scenarios.' },
+      { label: 'Standards', to: '/platform#standards', description: 'The frameworks MediSIEM is informed by.' },
+    ],
     footer: { label: 'Explore the platform', to: '/platform' },
   },
   {
-    label: 'Solutions',
-    to: '/solutions',
-    links: solutions.map((s) => ({ label: s.title, to: `/solutions/${s.slug}`, description: s.challenge })),
-    footer: { label: 'See all solutions', to: '/solutions' },
+    label: 'Products',
+    to: '/products',
+    links: products.map((p) => ({ label: p.shortName, to: `/products/${p.slug}`, description: p.tagline })),
+    footer: { label: 'All products', to: '/products' },
   },
   {
-    label: 'Industries',
+    label: 'Healthcare',
     to: '/industries',
     links: industries.map((i) => ({ label: i.name, to: `/industries/${i.slug}`, description: i.headline })),
-    footer: { label: 'See all industries', to: '/industries' },
+    footer: { label: 'See all care settings', to: '/industries' },
   },
-  { label: 'Integrations', to: '/integrations' },
   {
-    label: 'Resources',
-    to: '/resources',
+    label: 'Research',
+    to: '/research',
     links: [
-      { label: 'Documentation', to: '/documentation', description: 'Deploy, configure and operate MediSIEM.' },
-      { label: 'API Reference', to: '/api', description: 'Programmatic access to scores and alerts.' },
-      { label: 'Blog', to: '/blog', description: 'Product news and threat analysis.' },
-      { label: 'Case Studies', to: '/case-studies', description: 'How teams deploy MediSIEM.' },
-      { label: 'Trust Center', to: '/trust', description: 'Security, privacy and compliance.' },
-      { label: 'Roadmap', to: '/roadmap', description: 'What we are building next.' },
+      { label: 'The paper', to: '/research#paper', description: 'Download the paper or copy the BibTeX.' },
+      { label: 'Team', to: '/research#team', description: 'The SLIIT team and supervisors behind MediSIEM.' },
+      { label: 'What we have validated', to: '/research#validation', description: 'And what we have not, yet.' },
+      { label: 'Resources', to: '/resources', description: 'Documentation, articles and guides.' },
     ],
-    footer: { label: 'All resources', to: '/resources' },
+    footer: { label: 'All research', to: '/research' },
   },
-  { label: 'Pricing', to: '/pricing' },
+  { label: 'Engagement', to: '/pricing' },
 ]
 
 export const footerColumns: { title: string; links: MenuLink[] }[] = [
   {
-    title: 'Products',
+    title: 'Platform',
     links: [
-      { label: 'SIEM', to: '/products/siem' },
-      { label: 'Threat Detection', to: '/products/threat-detection' },
-      { label: 'Vulnerability Management', to: '/products/vulnerability-management' },
-      { label: 'Endpoint Security', to: '/products/endpoint-security' },
-      { label: 'Compliance', to: '/products/compliance-management' },
+      { label: 'How it works', to: '/platform#modules' },
+      { label: 'CVSS vs CAS demo', to: '/platform#demo' },
+      { label: 'Use cases', to: '/platform#use-cases' },
+      { label: 'Products', to: '/products' },
+      { label: 'Engagement', to: '/pricing' },
     ],
   },
   {
-    title: 'Solutions',
+    title: 'Healthcare',
     links: [
-      { label: 'SOC Monitoring', to: '/solutions/soc-monitoring' },
-      { label: 'Enterprise Security', to: '/solutions' },
-      { label: 'Cloud Security', to: '/solutions/cloud-security' },
-      { label: 'Healthcare', to: '/industries/healthcare' },
-      { label: 'Banking', to: '/industries/banking-finance' },
+      { label: 'Hospitals', to: '/industries/hospitals' },
+      { label: 'Clinics', to: '/industries/clinics' },
+      { label: 'Solutions', to: '/solutions' },
+      { label: 'Integrations', to: '/integrations' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'Research',
     links: [
-      { label: 'Documentation', to: '/documentation' },
-      { label: 'Blog', to: '/blog' },
-      { label: 'Research', to: '/resources#research' },
-      { label: 'Case Studies', to: '/case-studies' },
-      { label: 'API', to: '/api' },
+      { label: 'The paper', to: '/research#paper' },
+      { label: 'Team', to: '/research#team' },
+      { label: 'Validation', to: '/research#validation' },
+      { label: 'Standards', to: '/research#standards' },
+      { label: 'Resources', to: '/resources' },
     ],
   },
   {
     title: 'Company',
     links: [
       { label: 'About', to: '/about' },
-      { label: 'Customers', to: '/customers' },
       { label: 'Careers', to: '/careers' },
       { label: 'Roadmap', to: '/roadmap' },
       { label: 'Contact', to: '/contact' },
@@ -105,7 +104,7 @@ export const footerColumns: { title: string; links: MenuLink[] }[] = [
     links: [
       { label: 'Trust Center', to: '/trust' },
       { label: 'Security', to: '/security' },
-      { label: 'Vulnerability Disclosure', to: '/trust#vulnerability-disclosure' },
+      { label: 'Responsible disclosure', to: '/trust#vulnerability-disclosure' },
       { label: 'Status', to: '/status' },
     ],
   },

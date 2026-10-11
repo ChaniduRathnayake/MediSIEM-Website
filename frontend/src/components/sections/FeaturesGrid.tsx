@@ -10,7 +10,7 @@ export default function FeaturesGrid() {
           align="left"
           eyebrow="Capabilities"
           title={<span id="features-heading">Built for outcomes, not checklists.</span>}
-          lead="Every capability is measured by what it does for the business: less time wasted, less exposure, faster answers for leadership and regulators."
+          lead="Every capability is measured by what it does for your hospital: less time wasted, less exposure, faster answers for clinical leadership and regulators."
         />
 
         {/* Hairline grid: cells share borders for a dense, engineered feel. */}

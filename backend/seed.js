@@ -9,7 +9,7 @@ const Document = require('./models/Document');
 const TeamMember = require('./models/TeamMember');
 
 // Product roadmap phases. Dates are approximate (month-level), not exact
-// deadlines — adjust freely as the real timeline shifts.
+// deadlines. Adjust freely as the real timeline shifts.
 const milestones = [
   {
     title: 'Research & Data Analysis',
@@ -69,7 +69,7 @@ const milestones = [
 
 // Internal note: studentId / institutional email fields are kept here for
 // record-keeping only. GET /api/team strips them (controllers/teamController.js),
-// so they never reach the public site — this is a commercial product site,
+// so they never reach the public site. This is a commercial product site,
 // not an academic listing.
 const team = [
   {
@@ -83,7 +83,7 @@ const team = [
     order: 1,
   },
   {
-    name: 'Ms. Ayesha Wijesooroya',
+    name: 'Ms. Ayesha Wijesooriya',
     studentId: 'N/A',
     role: 'Advisor',
     component: 'Technical Advisor',

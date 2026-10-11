@@ -38,7 +38,7 @@ export default function Resources({ focus }: { focus?: ResourceTypeId }) {
         breadcrumb={focused ? [{ label: 'Resources', to: '/resources' }, { label: focused.title }] : undefined}
         eyebrow="Resources"
         title={focused?.title ?? 'Learn how impact-aware security works.'}
-        lead={focused?.lead ?? 'Research, product collateral and guides for security leaders and the engineers who run their platforms.'}
+        lead={focused?.lead ?? 'Research, product collateral and guides for hospital security leaders and the engineers who run their platforms.'}
         actions={
           focused && focusType?.status === 'soon' ? (
             <Link to={`/contact?intent=resource&topic=${focus}`} className="btn-primary">

@@ -11,14 +11,14 @@ export interface PageMeta {
 
 export const pageMeta = {
   '/': {
-    title: 'MediSIEM | Safety-as-a-Service Security Operations for Hospitals',
+    title: 'MediSIEM | Clinically Aware Security for Hospital Networks',
     description:
-      'MediSIEM is Safety-as-a-Service security for hospitals that can’t afford enterprise SOC tooling. It ranks every alert by patient impact and asks a clinician before any response cuts off a life-critical device.',
+      'MediSIEM is security that knows which device is keeping someone alive. It detects attacks on medical devices, ranks every alert by clinical impact, and never isolates a life-sustaining device without a human. Research prototype from SLIIT.',
   },
   '/platform': {
     title: 'Platform | MediSIEM',
     description:
-      'How MediSIEM works: unified telemetry, machine-learning detection, threat-intelligence enrichment and the CAAP impact-aware Alert Score, with guided, auditable response.',
+      'How MediSIEM works: MedShield detects IoMT attacks, CAAP ranks alerts with the Clinical Alert Score, and criticality-gated response protects life-sustaining devices. Try the CVSS vs CAS demo.',
   },
   '/products': {
     title: 'Products | MediSIEM',
@@ -28,12 +28,12 @@ export const pageMeta = {
   '/solutions': {
     title: 'Solutions | MediSIEM',
     description:
-      'Security solutions for SOC monitoring, threat detection, incident response, vulnerability management, compliance, endpoint protection, cloud security and network security.',
+      'Healthcare security solutions: hospital SOC monitoring, threat detection, clinically safe incident response, medical device protection, vulnerability management, HIPAA and GDPR compliance, EHR and cloud security, and clinical network security.',
   },
   '/industries': {
-    title: 'Industries | MediSIEM',
+    title: 'Healthcare | MediSIEM',
     description:
-      'MediSIEM is built first for hospitals and public healthcare clusters, and adapts to banking and finance, government, education, retail, manufacturing, technology and SMEs.',
+      'MediSIEM protects every care setting: hospitals, healthcare clusters and networks, clinics and medical centres, laboratories and imaging centres, nursing homes and long-term care, and telehealth providers.',
   },
   '/integrations': {
     title: 'Integrations | MediSIEM',
@@ -41,9 +41,14 @@ export const pageMeta = {
       'MediSIEM integrations available today (Wazuh, Shuffle, Elasticsearch, Kibana, Syslog, MISP, Docker, REST API) and connectors on the roadmap for cloud, network, endpoint, ITSM and identity platforms.',
   },
   '/pricing': {
-    title: 'Pricing | MediSIEM',
+    title: 'Engagement Model | MediSIEM',
     description:
-      'MediSIEM Safety-as-a-Service pricing for hospitals: a one-time setup fee for IoMT integration, then a flat monthly subscription from LKR 15,000.',
+      'Work with MediSIEM through a research collaboration, a hospital pilot or an enterprise deployment conversation. Every engagement is scoped with you. Request a pilot.',
+  },
+  '/research': {
+    title: 'Research | MediSIEM',
+    description:
+      'The research behind MediSIEM: the paper, the SLIIT team (R26-CS-008), what has been validated on public datasets and simulated hospital scenarios, and what has not yet.',
   },
   '/customers': {
     title: 'Customers | MediSIEM',
@@ -87,11 +92,11 @@ export const pageMeta = {
   '/about': {
     title: 'About | MediSIEM',
     description:
-      'MediSIEM builds Safety-as-a-Service security operations for hospitals that can’t afford enterprise SOC tooling. Meet the team and the principles behind the platform.',
+      'MediSIEM is clinically aware security for hospital networks, built as research project R26-CS-008 at SLIIT. Meet the team and the principles behind the platform.',
   },
   '/careers': {
     title: 'Careers | MediSIEM',
-    description: 'Help build impact-aware security operations at MediSIEM.',
+    description: 'Help build security operations that protect hospitals and their patients at MediSIEM.',
   },
   '/roadmap': {
     title: 'Roadmap | MediSIEM',
@@ -100,15 +105,11 @@ export const pageMeta = {
   '/contact': {
     title: 'Contact | MediSIEM',
     description:
-      'Book a MediSIEM demo, get a setup quote for your hospital, talk to sales or a security expert, apply for early access, or contact our security team.',
+      'Request a MediSIEM pilot, discuss a research collaboration or deployment, book a walkthrough, or report a security issue to the MediSIEM team.',
   },
   '/signup': {
-    title: 'Get Started | MediSIEM',
-    description: 'Start a guided MediSIEM pilot. Connect part of your hospital network and see your own alerts ranked by patient impact.',
-  },
-  '/login': {
-    title: 'Log in | MediSIEM',
-    description: 'Sign in to your organization’s MediSIEM console.',
+    title: 'Request a Pilot | MediSIEM',
+    description: 'Request a MediSIEM pilot. See your own hospital alerts ranked by clinical impact, alongside the Wazuh deployment you already run.',
   },
   '/status': {
     title: 'System Status | MediSIEM',
@@ -135,7 +136,7 @@ export const pageMeta = {
 export type StaticPath = keyof typeof pageMeta
 
 /** Static pages that are prerendered but left out of the sitemap. */
-export const unlistedPaths: StaticPath[] = ['/login']
+export const unlistedPaths: StaticPath[] = []
 
 export const productMeta = (p: { name: string; tagline: string; summary: string }): PageMeta => ({
   title: `${p.name} | MediSIEM`,

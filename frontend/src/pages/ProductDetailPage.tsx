@@ -41,11 +41,11 @@ export default function ProductDetailPage() {
         lead={product.summary}
         actions={
           <>
-            <Link to={`/signup?product=${product.slug}`} className="btn-primary">
-              Get Started <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            <Link to={`/contact?intent=pilot&product=${product.slug}`} className="btn-primary">
+              Request a pilot <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <Link to="/contact?intent=demo" className="btn-secondary">
-              Book a Demo
+            <Link to="/research#paper" className="btn-secondary">
+              Read the research paper
             </Link>
           </>
         }
@@ -80,7 +80,7 @@ export default function ProductDetailPage() {
 
       <section className="section border-y border-slate-800/70 bg-slate-900/25" aria-labelledby="outcomes-heading">
         <div className="container-page grid gap-12 lg:grid-cols-2">
-          <SectionHeader align="left" eyebrow="Business outcomes" title={<span id="outcomes-heading">Why teams choose it</span>} />
+          <SectionHeader align="left" eyebrow="Outcomes" title={<span id="outcomes-heading">Why teams choose it</span>} />
           <Reveal>
             <ul className="space-y-4">
               {product.outcomes.map((o) => (

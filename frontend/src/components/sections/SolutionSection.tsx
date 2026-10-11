@@ -89,7 +89,7 @@ export default function SolutionSection() {
       <div className="container-page">
         <SectionHeader
           eyebrow="The platform"
-          title={<span id="solution-heading">One platform that knows what’s critical — and acts on it.</span>}
+          title={<span id="solution-heading">One platform that knows what’s critical and acts on it.</span>}
           lead="MediSIEM brings detection, prioritization, response and compliance into a single workflow, built around one question: what does this alert put at risk?"
         />
 

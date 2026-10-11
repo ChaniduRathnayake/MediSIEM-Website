@@ -76,7 +76,7 @@ export default function HeroDashboard() {
         </div>
       </BrowserFrame>
 
-      {/* Floating callouts — the two moments that sell the product */}
+      {/* Floating callouts: the two moments that sell the product */}
       <div className="animate-float-slow absolute -top-9 -left-4 hidden w-60 rounded-xl border border-slate-700/80 bg-slate-950/90 p-3.5 shadow-2xl shadow-black/50 backdrop-blur xl:-left-16 xl:block">
         <div className="flex items-start gap-2.5">
           <ShieldAlert className="mt-0.5 h-4 w-4 shrink-0 text-red-400" aria-hidden="true" />

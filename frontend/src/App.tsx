@@ -14,13 +14,13 @@ const IndustriesPage = lazy(() => import('./pages/IndustriesPage'))
 const IndustryDetailPage = lazy(() => import('./pages/IndustryDetailPage'))
 const IntegrationsPage = lazy(() => import('./pages/IntegrationsPage'))
 const PricingPage = lazy(() => import('./pages/PricingPage'))
+const ResearchPage = lazy(() => import('./pages/ResearchPage'))
 const CustomersPage = lazy(() => import('./pages/CustomersPage'))
 const Resources = lazy(() => import('./pages/Resources'))
 const TrustCenterPage = lazy(() => import('./pages/TrustCenterPage'))
 const AboutUs = lazy(() => import('./pages/AboutUs'))
 const CareersPage = lazy(() => import('./pages/CareersPage'))
 const Contact = lazy(() => import('./pages/Contact'))
-const LoginPage = lazy(() => import('./pages/LoginPage'))
 const SignupPage = lazy(() => import('./pages/SignupPage'))
 const StatusPage = lazy(() => import('./pages/StatusPage'))
 const LegalPage = lazy(() => import('./pages/LegalPage'))
@@ -41,6 +41,7 @@ function App() {
         <Route path="industries/:slug" element={<IndustryDetailPage />} />
         <Route path="integrations" element={<IntegrationsPage />} />
         <Route path="pricing" element={<PricingPage />} />
+        <Route path="research" element={<ResearchPage />} />
         <Route path="customers" element={<CustomersPage />} />
         <Route path="case-studies" element={<CustomersPage caseStudies />} />
         <Route path="resources" element={<Resources />} />
@@ -52,7 +53,6 @@ function App() {
         <Route path="about" element={<AboutUs />} />
         <Route path="careers" element={<CareersPage />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="login" element={<LoginPage />} />
         <Route path="signup" element={<SignupPage />} />
         <Route path="status" element={<StatusPage />} />
         <Route path="privacy" element={<LegalPage doc="privacy" />} />
@@ -62,8 +62,10 @@ function App() {
         <Route path="roadmap" element={<Roadmap />} />
 
         {/* Legacy routes from the previous site structure */}
+        <Route path="engagement" element={<Navigate to="/pricing" replace />} />
         <Route path="technology" element={<Navigate to="/platform" replace />} />
         <Route path="results" element={<Navigate to="/customers" replace />} />
+        <Route path="industries/healthcare" element={<Navigate to="/industries/hospitals" replace />} />
 
         <Route path="*" element={<NotFound />} />
       </Route>

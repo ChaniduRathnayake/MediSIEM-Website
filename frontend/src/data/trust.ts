@@ -81,7 +81,7 @@ export const trustTopics: TrustTopic[] = [
     title: 'Infrastructure',
     summary: 'Built on open, inspectable technologies.',
     points: [
-      'Wazuh, Shuffle, Elasticsearch and MISP at the core — widely reviewed open-source projects',
+      'Wazuh, Shuffle, Elasticsearch and MISP at the core: widely reviewed open-source projects',
       'Containerized for repeatable, hardened deployments',
       'Deploy on-premises, in your private cloud, or managed by us',
     ],
@@ -121,9 +121,10 @@ export const trustTopics: TrustTopic[] = [
     title: 'Vulnerability disclosure',
     summary: 'We welcome reports from security researchers.',
     points: [
-      'Report suspected vulnerabilities through our security contact form',
+      'Report suspected vulnerabilities through our security contact form, or to [PLACEHOLDER: security contact email]',
       'We acknowledge reports and keep you updated through remediation',
-      'Good-faith research is welcome — please avoid privacy violations and service disruption',
+      'Good-faith research is welcome. Please avoid privacy violations and service disruption',
+      '[PLACEHOLDER: full responsible-disclosure policy, pending legal review]',
     ],
   },
   {

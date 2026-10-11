@@ -82,10 +82,10 @@ export function PageHero({
 
 /* Closing conversion banner. */
 export function CTABanner({
-  title = 'See your own alerts, ranked by what matters.',
-  lead = 'Book a 30-minute demo with a security engineer, or start a guided trial in your environment.',
-  primary = { label: 'Book a Demo', to: '/contact?intent=demo' },
-  secondary = { label: 'Talk to a Security Expert', to: '/contact?intent=expert' },
+  title = 'Put patient impact at the top of your alert queue.',
+  lead = 'We are looking for hospitals to pilot MediSIEM alongside their existing Wazuh deployment. Tell us about your network, or read the research first.',
+  primary = { label: 'Request a pilot', to: '/contact?intent=pilot' },
+  secondary = { label: 'Read the research', to: '/research' },
 }: {
   title?: string
   lead?: string

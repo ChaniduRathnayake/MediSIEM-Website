@@ -8,7 +8,7 @@ export interface Testimonial {
   result: string
 }
 
-// Real customer quotes only — each needs written approval from the named
+// Real customer quotes only. Each needs written approval from the named
 // person. Leave empty until then: the Customers section shows the
 // early-access program instead of fabricated testimonials.
 export const testimonials: Testimonial[] = []
@@ -18,7 +18,7 @@ export interface OutcomeMetric {
   label: string
   description: string
   // null = not yet measured with customers. Never replace with an invented
-  // number — fill in only from real pilot results.
+  // number. Fill in only from real pilot results.
   value: string | null
 }
 

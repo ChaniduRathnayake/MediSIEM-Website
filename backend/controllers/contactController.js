@@ -21,8 +21,11 @@ async function submitContact(req, res, next) {
   }
 
   try {
-    const { name, email, message } = req.body;
-    const contactMessage = await ContactMessage.create({ name, email, message });
+    const { name, email, message, subject = '', source = 'website' } = req.body;
+    const contactMessage = await ContactMessage.create({ name, email, subject, message, source });
+
+    const prefix = source === 'cdap' ? '[MediSIEM CDAP Site]' : '[MediSIEM Website]';
+    const mailSubject = subject ? `${prefix} ${subject} (from ${name})` : `${prefix} New message from ${name}`;
 
     const transporter = mailer.getTransporter();
     if (transporter) {
@@ -31,12 +34,13 @@ async function submitContact(req, res, next) {
           from: process.env.SMTP_FROM || process.env.SMTP_USER,
           to: process.env.CONTACT_RECEIVER_EMAIL || process.env.SMTP_USER,
           replyTo: email,
-          // Strip line breaks so the name can't add extra mail headers.
-          subject: `[MediSIEM Website] New message from ${name.replace(/[\r\n]+/g, ' ')}`,
-          text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+          // Strip line breaks so the name or subject can't add extra mail headers.
+          subject: mailSubject.replace(/[\r\n]+/g, ' '),
+          text: `Name: ${name}\nEmail: ${email}\n${subject ? `Subject: ${subject}\n` : ''}\n${message}`,
           html:
             `<p><strong>Name:</strong> ${escapeHtml(name)}</p>` +
             `<p><strong>Email:</strong> ${escapeHtml(email)}</p>` +
+            (subject ? `<p><strong>Subject:</strong> ${escapeHtml(subject)}</p>` : '') +
             `<p><strong>Message:</strong></p>` +
             `<p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
         });

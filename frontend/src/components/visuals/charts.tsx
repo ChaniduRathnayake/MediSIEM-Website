@@ -3,12 +3,12 @@ import type { Tier } from '../../data/demoTelemetry'
 import { tierTone, toneClasses, type Tone } from './tones'
 
 /* ------------------------------------------------------------------ */
-/* Area chart — single series, cyan, with crosshair + tooltip on hover */
+/* Area chart: single series, cyan, with crosshair + tooltip on hover */
 /* ------------------------------------------------------------------ */
 
 interface AreaChartProps {
   data: number[]
-  /** Accessible name — the chart title. */
+  /** Accessible name: the chart title. */
   label: string
   height?: number
   /** Formats the tooltip for point i. */
@@ -100,7 +100,7 @@ export function AreaChart({ data, label, height = 120, formatPoint, className = 
 }
 
 /* ------------------------------------------------------------------ */
-/* Gauge — a single headline score on a 0–max arc                       */
+/* Gauge: a single headline score on a 0–max arc                       */
 /* ------------------------------------------------------------------ */
 
 interface GaugeProps {
@@ -139,7 +139,7 @@ export function Gauge({ value, max = 100, label, size = 148, status }: GaugeProp
 }
 
 /* ------------------------------------------------------------------ */
-/* Horizontal bars — magnitude by category, single hue                 */
+/* Horizontal bars: magnitude by category, single hue                 */
 /* ------------------------------------------------------------------ */
 
 interface BarListProps {
@@ -171,7 +171,7 @@ export function BarList({ items, unit = '%', label }: BarListProps) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Status primitives — color always paired with a text label           */
+/* Status primitives: color always paired with a text label           */
 /* ------------------------------------------------------------------ */
 
 export function TierBadge({ tier }: { tier: Tier }) {

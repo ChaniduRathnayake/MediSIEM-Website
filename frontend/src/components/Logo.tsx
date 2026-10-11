@@ -4,7 +4,7 @@ interface LogoProps {
   markOnly?: boolean
 }
 
-// Hexagonal "node" mark: a shield-like hex with a single prioritized node —
+// Hexagonal "node" mark: a shield-like hex with a single prioritized node:
 // echoes the network-topology visual language rather than a padlock.
 export default function Logo({ className = '', markOnly = false }: LogoProps) {
   return (

@@ -1,12 +1,11 @@
 import { readFileSync } from 'node:fs'
 import { test as base, expect } from '@playwright/test'
 
-/** Every sitemap route, plus pages deliberately left out of it. */
+/** Every sitemap route (add any page deliberately left out of the sitemap here). */
 export const routes = [
   ...[...readFileSync(new URL('../dist/sitemap.xml', import.meta.url), 'utf8').matchAll(/<loc>https?:\/\/[^/]+(\/[^<]*)<\/loc>/g)].map(
     (m) => m[1],
   ),
-  '/login',
 ]
 
 // Mocks the API so tests are fast and need no backend: content endpoints fail

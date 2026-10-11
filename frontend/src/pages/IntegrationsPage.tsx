@@ -18,7 +18,7 @@ export default function IntegrationsPage() {
       <PageHero
         eyebrow="Integrations"
         title="Open by design. Connected to your stack."
-        lead="MediSIEM is built on open, widely deployed security technology and exposes a REST API. We only list an integration as available once it ships — everything else is clearly marked as roadmap."
+        lead="MediSIEM is built on open, widely deployed security technology and exposes a REST API. We only list an integration as available once it ships. Everything else is clearly marked as roadmap."
         actions={
           <>
             <Link to="/contact?intent=integration" className="btn-primary">
@@ -49,7 +49,7 @@ export default function IntegrationsPage() {
 
           <h2 className="mt-20 text-2xl font-semibold tracking-tight text-slate-50">On the roadmap</h2>
           <p className="mt-2 max-w-2xl text-sm text-slate-400">
-            Planned native connectors. These are not yet supported — if one matters to you, tell us and it helps us prioritize.
+            Planned native connectors. These are not yet supported. If one matters to you, tell us and it helps us prioritize.
           </p>
           <Reveal>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
